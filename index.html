@@ -6,13 +6,15 @@
             
         *{box-sizing: border-box}
         
-        .container{width: 720px;
+        .container{
+                   width: 720px;
                    overflow: hidden;
                    margin: 50px auto 0 auto;
                    background-color: #446CB3;
                  }
         
-        .container .dot{float: left;
+        .container .dot{
+                        float: left;
                         width: 80px;
                         height: 80px;
                         border: 1px solid #000;
@@ -23,28 +25,16 @@
                         margin: 5px;
                         background-color: #fff;
                       }
-        
-        .container .dot:hover{background: rgba(10,10,10,0.5);
-                              color: #fff
-                             }
+        #turnBtn{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
         
     </style>
 
 </head>
 <body>
-
-    <script>
-
-        function placeTokens(color) {
-            var dot = document.getElementsByClassName('dot');
-            dot[0].style.backgroundColor = color;
-        }
-
-        function place(element, color) {
-            element.style.backgroundColor = color;
-        }
-
-    </script>
 
     <div class="container" id="board">
         <div class="dot" id="dot1"></div>
@@ -112,6 +102,47 @@
         <div class="dot" id="dot63" onclick="place(this, 'red')"></div>
         <div class="dot" id="dot64" onclick="place(this, 'yellow')"></div>
     </div>
+
+    <br><br>
+    <button id="turnBtn" onclick="changeTurn()">Change turn</button>
+
+    <script src="jquery.js"></script>
+    <script>
+
+        var turn = 0;
+
+        $(".dot").mouseenter(function() {
+
+            if(turn == 0)
+                this.style.backgroundColor = "red";
+            else
+                this.style.backgroundColor = "yellow";
+        });
+
+        $(".dot").mouseleave(function() {
+            this.style.backgroundColor = "#fff";
+        });
+
+        function changeTurn() {
+
+            if(turn == 0)
+                turn = 1;
+            else
+                turn = 0;
+
+        }
+
+        //These functions won't work now because of mouseenter and mouseleave 😥
+        function placeTokens(color) {
+            var dot = document.getElementsByClassName('dot');
+            dot[0].style.backgroundColor = color;
+        }
+
+        function place(element, color) {
+            element.style.backgroundColor = color;
+        }
+
+    </script>
 
 </body>
 </html>
