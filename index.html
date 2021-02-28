@@ -114,13 +114,13 @@
         $(".dot").mouseenter(function() {
 
             if(turn == 0)
-                this.style.backgroundColor = "red";
+                this.style.border = "3px solid red";
             else
-                this.style.backgroundColor = "yellow";
+                this.style.border = "3px solid yellow";
         });
 
         $(".dot").mouseleave(function() {
-            this.style.backgroundColor = "#fff";
+            this.style.border = "1px solid #000";
         });
 
         function changeTurn() {
