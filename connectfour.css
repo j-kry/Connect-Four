@@ -30,3 +30,8 @@ figure.item {
 #images {
     text-align:center;
 }
+
+a {
+    text-decoration: none;
+    color: white;
+}
