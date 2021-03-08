@@ -6,26 +6,59 @@
             
         *{box-sizing: border-box}
         
-        .container{
-                   width: 720px;
-                   overflow: hidden;
-                   margin: 50px auto 0 auto;
-                   background-color: #446CB3;
-                 }
+        .container {
+            width: 720px;
+            overflow: hidden;
+            margin: 50px auto 0 auto;
+            background-color: #446CB3;
+            position: relative;
+        }
         
-        .container .dot{
-                        float: left;
-                        width: 80px;
-                        height: 80px;
-                        border: 1px solid #000;
-                        border-radius: 50%;
-                        transition: all .25s ease-in-out;
-                        line-height: 100px; 
-                        cursor: pointer;
-                        margin: 5px;
-                        background-color: #fff;
-                      }
-        #turnBtn{
+        .container .dot {
+            float: left;
+            width: 80px;
+            height: 80px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            transition: all .25s ease-in-out;
+            line-height: 100px; 
+            cursor: pointer;
+            margin: 5px;
+            background-color: #fff;
+        }
+
+        .container .column {
+            float: left;
+            position: absolute;
+            width: 90px;
+            height: 720px;
+            border: 1px solid #000;  
+
+        }
+
+        #column2 {
+            left: 90px;
+        }
+        #column3 {
+            left: 180px;
+        }
+        #column4 {
+            left: 270px;
+        }
+        #column5 {
+            left: 360px;
+        }
+        #column6 {
+            left: 450px;
+        }
+        #column7 {
+            left: 540px;
+        }
+        #column8 {
+            left: 630px;
+        }
+
+        #turnBtn {
             display: block;
             margin-left: auto;
             margin-right: auto;
@@ -37,6 +70,9 @@
 <body>
 
     <div class="container" id="board">
+
+        
+
         <div class="dot" id="dot1"></div>
         <div class="dot" id="dot2"></div>
         <div class="dot" id="dot3"></div>
@@ -101,6 +137,14 @@
         <div class="dot" id="dot62" onclick="place(this, 'yellow')"></div>
         <div class="dot" id="dot63" onclick="place(this, 'red')"></div>
         <div class="dot" id="dot64" onclick="place(this, 'yellow')"></div>
+        <div class="column" id="column1"></div>
+        <div class="column" id="column2"></div>
+        <div class="column" id="column3"></div>
+        <div class="column" id="column4"></div>
+        <div class="column" id="column5"></div>
+        <div class="column" id="column6"></div>
+        <div class="column" id="column7"></div>
+        <div class="column" id="column8"></div>
     </div>
 
     <br><br>
@@ -110,8 +154,10 @@
     <script>
 
         var turn = 0;
+        var player1 = 'blue';
+        var player2 = 'purple';
 
-        $(".dot").mouseenter(function() {
+        $(".column").mouseenter(function() {
 
             if(turn == 0)
                 this.style.border = "3px solid red";
@@ -119,7 +165,7 @@
                 this.style.border = "3px solid yellow";
         });
 
-        $(".dot").mouseleave(function() {
+        $(".column").mouseleave(function() {
             this.style.border = "1px solid #000";
         });
 
@@ -132,7 +178,7 @@
 
         }
 
-        //These functions won't work now because of mouseenter and mouseleave 😥
+        //Old funcs
         function placeTokens(color) {
             var dot = document.getElementsByClassName('dot');
             dot[0].style.backgroundColor = color;
