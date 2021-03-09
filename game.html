@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <title>Connect Four</title>
+    <link href="connectfour.css" rel="stylesheet" type="text/css" />
     <style>
             
         *{box-sizing: border-box}
@@ -69,7 +70,43 @@
 </head>
 <body>
 
-    <div class="container" id="board">
+    <!-- Trigger/Open The Modal -->
+<button id="myBtn">Start Game</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+        <center style="font-size:50px;
+    font-weight:bold;">Pick your opponent</center>
+        <div id="images">
+        <figure class="item">
+            <a href="game.html"><img src="images/player.png" class="menupics"></a>
+            <a href="game.html"><figcaption class="caption">Player</figcaption></a>
+            </figure>
+        <figure class="item">
+            <a href="game.html"><img src="images/robot.png" class="menupics"></a>
+            <a href="game.html"><figcaption class="caption">Computer</figcaption></a>
+        </figure>
+        </div>
+  </div>
+</div>
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+</script>
+    
+
+<div class="container" id="board">
 
         
 
