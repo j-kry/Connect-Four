@@ -8,23 +8,11 @@
 
         .container {
             width: 720px;
+            height: 720px;
             overflow: hidden;
             margin: 50px auto 0 auto;
             background-color: #1d70ec;
             position: relative;
-        }
-        
-        .container .dot {
-            float: left;
-            width: 80px;
-            height: 80px;
-            border: 1px solid #000;
-            border-radius: 50%;
-            transition: all .25s ease-in-out;
-            line-height: 100px; 
-            cursor: pointer;
-            margin: 5px;
-            background-color: #fff;
         }
 
         .container .column {
@@ -33,9 +21,8 @@
             width: 90px;
             height: 720px;
             border: 1px solid #000;  
-
         }
-
+        
         #column2 {
             left: 90px;
         }
@@ -58,16 +45,23 @@
             left: 630px;
         }
 
-        #turnBtn {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+        .container .dot {
+            float: left;
+            width: 80px;
+            height: 80px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            transition: all .25s ease-in-out;
+            line-height: 100px;
+            margin: 5px;
+            background-color: #fff;
         }
 
         @media only screen and (max-width: 768px) {
             /* For mobile phones: */
             .container {
                 width: 360px;
+                height: 360px;
             }
 
             .container .dot {
@@ -110,124 +104,160 @@
 <body>
 
     <div class="container" id="board">
-
-        
-
-        <div class="dot" id="dot1"></div>
-        <div class="dot" id="dot2"></div>
-        <div class="dot" id="dot3"></div>
-        <div class="dot" id="dot4"></div>
-        <div class="dot" id="dot5"></div>
-        <div class="dot" id="dot6"></div>
-        <div class="dot" id="dot7"></div>
-        <div class="dot" id="dot8"></div>
-        <div class="dot" id="dot9"></div>
-        <div class="dot" id="dot10"></div>
-        <div class="dot" id="dot11"></div>
-        <div class="dot" id="dot12"></div>
-        <div class="dot" id="dot13"></div>
-        <div class="dot" id="dot14"></div>
-        <div class="dot" id="dot15"></div>
-        <div class="dot" id="dot16"></div>
-        <div class="dot" id="dot17"></div>
-        <div class="dot" id="dot18"></div>
-        <div class="dot" id="dot19"></div>
-        <div class="dot" id="dot20"></div>
-        <div class="dot" id="dot21"></div>
-        <div class="dot" id="dot22"></div>
-        <div class="dot" id="dot23"></div>
-        <div class="dot" id="dot24"></div>
-        <div class="dot" id="dot25"></div>
-        <div class="dot" id="dot26"></div>
-        <div class="dot" id="dot27"></div>
-        <div class="dot" id="dot28"></div>
-        <div class="dot" id="dot29"></div>
-        <div class="dot" id="dot30"></div>
-        <div class="dot" id="dot31"></div>
-        <div class="dot" id="dot32"></div>
-        <div class="dot" id="dot33"></div>
-        <div class="dot" id="dot34"></div>
-        <div class="dot" id="dot35"></div>
-        <div class="dot" id="dot36"></div>
-        <div class="dot" id="dot37"></div>
-        <div class="dot" id="dot38"></div>
-        <div class="dot" id="dot39"></div>
-        <div class="dot" id="dot40"></div>
-        <div class="dot" id="dot41"></div>
-        <div class="dot" id="dot42"></div>
-        <div class="dot" id="dot43"></div>
-        <div class="dot" id="dot44"></div>
-        <div class="dot" id="dot45"></div>
-        <div class="dot" id="dot46"></div>
-        <div class="dot" id="dot47"></div>
-        <div class="dot" id="dot48"></div>
-        <div class="dot" id="dot49"></div>
-        <div class="dot" id="dot50"></div>
-        <div class="dot" id="dot51"></div>
-        <div class="dot" id="dot52"></div>
-        <div class="dot" id="dot53"></div>
-        <div class="dot" id="dot54"></div>
-        <div class="dot" id="dot55"></div>
-        <div class="dot" id="dot56"></div>
-        <div class="dot" id="dot57" onclick="place(this, 'red')"></div>
-        <div class="dot" id="dot58" onclick="place(this, 'yellow')"></div>
-        <div class="dot" id="dot59" onclick="place(this, 'red')"></div>
-        <div class="dot" id="dot60" onclick="place(this, 'yellow')"></div>
-        <div class="dot" id="dot61" onclick="place(this, 'red')"></div>
-        <div class="dot" id="dot62" onclick="place(this, 'yellow')"></div>
-        <div class="dot" id="dot63" onclick="place(this, 'red')"></div>
-        <div class="dot" id="dot64" onclick="place(this, 'yellow')"></div>
-        <div class="column" id="column1"></div>
-        <div class="column" id="column2"></div>
-        <div class="column" id="column3"></div>
-        <div class="column" id="column4"></div>
-        <div class="column" id="column5"></div>
-        <div class="column" id="column6"></div>
-        <div class="column" id="column7"></div>
-        <div class="column" id="column8"></div>
+        <div class="column" id="column1">
+            <div class="dot" id="c1dot1"></div>
+            <div class="dot" id="c1dot2"></div>
+            <div class="dot" id="c1dot3"></div>
+            <div class="dot" id="c1dot4"></div>
+            <div class="dot" id="c1dot5"></div>
+            <div class="dot" id="c1dot6"></div>
+            <div class="dot" id="c1dot7"></div>
+            <div class="dot" id="c1dot8"></div>
+        </div>
+        <div class="column" id="column2">
+            <div class="dot" id="c2dot1"></div>
+            <div class="dot" id="c2dot2"></div>
+            <div class="dot" id="c2dot3"></div>
+            <div class="dot" id="c2dot4"></div>
+            <div class="dot" id="c2dot5"></div>
+            <div class="dot" id="c2dot6"></div>
+            <div class="dot" id="c2dot7"></div>
+            <div class="dot" id="c2dot8"></div>
+        </div>
+        <div class="column" id="column3">
+            <div class="dot" id="c3dot1"></div>
+            <div class="dot" id="c3dot2"></div>
+            <div class="dot" id="c3dot3"></div>
+            <div class="dot" id="c3dot4"></div>
+            <div class="dot" id="c3dot5"></div>
+            <div class="dot" id="c3dot6"></div>
+            <div class="dot" id="c3dot7"></div>
+            <div class="dot" id="c3dot8"></div>
+        </div>
+        <div class="column" id="column4">
+            <div class="dot" id="c4dot1"></div>
+            <div class="dot" id="c4dot2"></div>
+            <div class="dot" id="c4dot3"></div>
+            <div class="dot" id="c4dot4"></div>
+            <div class="dot" id="c4dot5"></div>
+            <div class="dot" id="c4dot6"></div>
+            <div class="dot" id="c4dot7"></div>
+            <div class="dot" id="c4dot8"></div>
+        </div>
+        <div class="column" id="column5">
+            <div class="dot" id="c5dot1"></div>
+            <div class="dot" id="c5dot2"></div>
+            <div class="dot" id="c5dot3"></div>
+            <div class="dot" id="c5dot4"></div>
+            <div class="dot" id="c5dot5"></div>
+            <div class="dot" id="c5dot6"></div>
+            <div class="dot" id="c5dot7"></div>
+            <div class="dot" id="c5dot8"></div>
+        </div>
+        <div class="column" id="column6">
+            <div class="dot" id="c6dot1"></div>
+            <div class="dot" id="c6dot2"></div>
+            <div class="dot" id="c6dot3"></div>
+            <div class="dot" id="c6dot4"></div>
+            <div class="dot" id="c6dot5"></div>
+            <div class="dot" id="c6dot6"></div>
+            <div class="dot" id="c6dot7"></div>
+            <div class="dot" id="c6dot8"></div>
+        </div>
+        <div class="column" id="column7">
+            <div class="dot" id="c7dot1"></div>
+            <div class="dot" id="c7dot2"></div>
+            <div class="dot" id="c7dot3"></div>
+            <div class="dot" id="c7dot4"></div>
+            <div class="dot" id="c7dot5"></div>
+            <div class="dot" id="c7dot6"></div>
+            <div class="dot" id="c7dot7"></div>
+            <div class="dot" id="c7dot8"></div>
+        </div>
+        <div class="column" id="column8">
+            <div class="dot" id="c8dot1"></div>
+            <div class="dot" id="c8dot2"></div>
+            <div class="dot" id="c8dot3"></div>
+            <div class="dot" id="c8dot4"></div>
+            <div class="dot" id="c8dot5"></div>
+            <div class="dot" id="c8dot6"></div>
+            <div class="dot" id="c8dot7"></div>
+            <div class="dot" id="c8dot8"></div>
+        </div>
     </div>
-
-    <br><br>
-    <button id="turnBtn" onclick="changeTurn()">Change turn</button>
 
     <script src="jquery.js"></script>
     <script>
 
-        var turn = 0;
-        var player1 = 'blue';
-        var player2 = 'purple';
+        var turn = "red";
+        var player1 = "red";
+        var player2 = "yellow";
+        
+        //Array to keep track of which row has a token placed
+        var indexes = [8, 8, 8, 8, 8, 8, 8, 8];
+        var clickedCol = "";
 
-
-        //TODO make the bottom most open circle highlight as well
+        //On mouse enter highlight the column with the player color
+        //$(".column") returns everything with a class name of column
         $(".column").mouseenter(function() {
 
-            if(turn == 0)
-                this.style.border = "3px solid red";
-            else
-                this.style.border = "3px solid yellow";
+            if(turn == player1) {
+                this.style.border = "1px solid " + player1;
+                this.style.backgroundColor = "rgba(255, 0, 0, 0.25)";
+            }
+            else {
+                this.style.border = "1px solid " + player2;
+                this.style.backgroundColor = "rgba(255, 255, 0, 0.25)";
+            }
         });
 
+        //On mouse leave turn the color back to normal
         $(".column").mouseleave(function() {
             this.style.border = "1px solid #000";
+            this.style.backgroundColor = "#1d70ec";
+        });
+
+        //When any column is clicked
+        $(".column").click(function() {
+
+            //Get the id of the column
+            clickedCol = this.id;
+            
+            placeToken(clickedCol, clickedCol.substring(6));
+            
+            changeTurn();
+
+            //TODO make color change to next players color
+            this.style.border = "1px solid #000";
+            this.style.backgroundColor = "#1d70ec";
+
         });
 
         function changeTurn() {
 
-            if(turn == 0)
-                turn = 1;
+            if(turn == player1)
+                turn = player2;
             else
-                turn = 0;
+                turn = player1;
 
         }
 
-        //Old funcs
-        function placeTokens(color) {
-            var dot = document.getElementsByClassName('dot');
-            dot[0].style.backgroundColor = color;
-        }
+        function placeToken(column, num) {
 
-        function place(element, color) {
-            element.style.backgroundColor = color;
+            //We need to get the id of the bottom-most dot
+
+            //column number --> example "c1"
+            var col = "c" + num;
+            //column's row index --> example "dot1"
+            var row = "dot" + indexes[num-1];
+            //complete id --> example "c1dot1"
+            var together = col + row;
+
+            //place token of the player color
+            document.getElementById(together).style.backgroundColor = turn;
+            //decrement the column index
+            indexes[num-1]--;
+
         }
 
     </script>
