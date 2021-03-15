@@ -13,17 +13,6 @@ h1 {
     text-align: center;
 }
 
-#menu {
-    margin-left:300px;
-    margin-right:300px;
-    margin-bottom: 100px;
-    margin-top:50px;
-    padding:15px;
-    background-color: 0000FF;
-    color:white;
-    font-size: 20;
-}
-
 .menupics {
     width:150px; 
     padding-bottom: 8px;
@@ -46,3 +35,125 @@ a {
     text-decoration: none;
     color: white;
 }
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  color:white;
+  font-size:30px;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #0000FF;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  font-size: 20;
+}
+
+/* for game.html */
+ *{box-sizing: border-box}
+
+        .container {
+            width: 720px;
+            height: 720px;
+            overflow: hidden;
+            margin: 50px auto 0 auto;
+            background-color: #1d70ec;
+            position: relative;
+        }
+
+        .container .column {
+            float: left;
+            position: absolute;
+            width: 90px;
+            height: 720px;
+            border: 1px solid #000;  
+        }
+        
+        #column2 {
+            left: 90px;
+        }
+        #column3 {
+            left: 180px;
+        }
+        #column4 {
+            left: 270px;
+        }
+        #column5 {
+            left: 360px;
+        }
+        #column6 {
+            left: 450px;
+        }
+        #column7 {
+            left: 540px;
+        }
+        #column8 {
+            left: 630px;
+        }
+
+        .container .dot {
+            float: left;
+            width: 80px;
+            height: 80px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            transition: all .25s ease-in-out;
+            line-height: 100px;
+            margin: 5px;
+            background-color: #fff;
+        }
+
+        @media only screen and (max-width: 768px) {
+            /* For mobile phones: */
+            .container {
+                width: 360px;
+                height: 360px;
+            }
+
+            .container .dot {
+                width: 40px;
+                height: 40px;
+                margin: 2.5px;
+            }
+
+            .container .column {
+                width: 45px;
+                height: 360px;
+            }
+
+            #column2 {
+                left: 45px;
+            }
+            #column3 {
+                left: 90px;
+            }
+            #column4 {
+                left: 135px;
+            }
+            #column5 {
+                left: 180px;
+            }
+            #column6 {
+                left: 225px;
+            }
+            #column7 {
+                left: 270px;
+            }
+            #column8 {
+                left: 315px;
+            }
+        }
