@@ -3,107 +3,32 @@
 
 <head>
 
-    <style>
-            
-        *{box-sizing: border-box}
-
-        .container {
-            width: 720px;
-            height: 720px;
-            overflow: hidden;
-            margin: 50px auto 0 auto;
-            background-color: #1d70ec;
-            position: relative;
-        }
-
-        .container .column {
-            float: left;
-            position: absolute;
-            width: 90px;
-            height: 720px;
-            border: 1px solid #000;  
-        }
-        
-        #column2 {
-            left: 90px;
-        }
-        #column3 {
-            left: 180px;
-        }
-        #column4 {
-            left: 270px;
-        }
-        #column5 {
-            left: 360px;
-        }
-        #column6 {
-            left: 450px;
-        }
-        #column7 {
-            left: 540px;
-        }
-        #column8 {
-            left: 630px;
-        }
-
-        .container .dot {
-            float: left;
-            width: 80px;
-            height: 80px;
-            border: 1px solid #000;
-            border-radius: 50%;
-            transition: all .25s ease-in-out;
-            line-height: 100px;
-            margin: 5px;
-            background-color: #fff;
-        }
-
-        @media only screen and (max-width: 768px) {
-            /* For mobile phones: */
-            .container {
-                width: 360px;
-                height: 360px;
-            }
-
-            .container .dot {
-                width: 40px;
-                height: 40px;
-                margin: 2.5px;
-            }
-
-            .container .column {
-                width: 45px;
-                height: 360px;
-            }
-
-            #column2 {
-                left: 45px;
-            }
-            #column3 {
-                left: 90px;
-            }
-            #column4 {
-                left: 135px;
-            }
-            #column5 {
-                left: 180px;
-            }
-            #column6 {
-                left: 225px;
-            }
-            #column7 {
-                left: 270px;
-            }
-            #column8 {
-                left: 315px;
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="connectfour.css"/>
 
 </head>
 <body>
 
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Start Game</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <center style="font-size:50px;
+                           font-weight:bold;">Pick your opponent</center>
+            <div id="images">
+                <figure class="item">
+                    <a href="game.html"><img src="images/player.png" class="menupics"></a>
+                    <a href="game.html"><figcaption class="caption">Player</figcaption></a>
+                </figure>
+                <figure class="item">
+                    <a href="game.html"><img src="images/robot.png" class="menupics"></a>
+                    <a href="game.html"><figcaption class="caption">Computer</figcaption></a>
+                </figure>
+            </div>
+        </div>
+    </div>
     <div class="container" id="board">
         <div class="column" id="column1">
             <div class="dot" id="c1dot1"></div>
@@ -186,112 +111,10 @@
             <div class="dot" id="c8dot8"></div>
         </div>
     </div>
-
     <script src="jquery.js"></script>
-    <script>
+    <script src="javascript.js"></script>
 
-        var turn = "red";
-        var player1 = "red";
-        var player2 = "yellow";
-        
-        //Array to keep track of which row has a token placed
-        var indexes = [8, 8, 8, 8, 8, 8, 8, 8];
-        var clickedCol = "";
-
-        //On mouse enter highlight the column with the player color
-        //$(".column") returns everything with a class name of column
-        $(".column").mouseenter(function() {
-
-            if(turn == player1) {
-                this.style.border = "1px solid " + player1;
-                this.style.backgroundColor = "rgba(255, 0, 0, 0.25)";
-            }
-            else {
-                this.style.border = "1px solid " + player2;
-                this.style.backgroundColor = "rgba(255, 255, 0, 0.25)";
-            }
-        });
-
-        //On mouse leave turn the color back to normal
-        $(".column").mouseleave(function() {
-            this.style.border = "1px solid #000";
-            this.style.backgroundColor = "#1d70ec";
-        });
-
-        //When any column is clicked
-        $(".column").click(function() {
-
-            //Get the id of the column
-            clickedCol = this.id;
-            
-            placeToken(clickedCol, clickedCol.substring(6));
-            
-            changeTurn();
-
-            //TODO make color change to next players color
-            this.style.border = "1px solid #000";
-            this.style.backgroundColor = "#1d70ec";
-
-        });
-
-        function changeTurn() {
-
-            if(turn == player1)
-                turn = player2;
-            else
-                turn = player1;
-
-        }
-
-        function placeToken(column, num) {
-
-            //We need to get the id of the bottom-most dot
-
-            //column number --> example "c1"
-            var col = "c" + num;
-            //column's row index --> example "dot1"
-            var row = "dot" + indexes[num-1];
-            //complete id --> example "c1dot1"
-            var together = col + row;
-
-            //place token of the player color
-            document.getElementById(together).style.backgroundColor = turn;
-            //decrement the column index
-            indexes[num-1]--;
-
-        }
-
-    </script>
+    
 
 </body>
-</html>
-    <head>
-        <script src="jquery.js"></script>
-        <script src="javascript.js"></script> 
-        <style src="connectfour.css"></style>
-    </head>
-    <body>
-
-        <!-- Trigger/Open The Modal -->
-        <button id="myBtn">Start Game</button>
-
-        <!-- The Modal -->
-        <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <div class="modal-content">
-                <center style="font-size:50px;
-                               font-weight:bold;">Pick your opponent</center>
-                <div id="images">
-                    <figure class="item">
-                        <a href="game.html"><img src="images/player.png" class="menupics"></a>
-                        <a href="game.html"><figcaption class="caption">Player</figcaption></a>
-                    </figure>
-                    <figure class="item">
-                        <a href="game.html"><img src="images/robot.png" class="menupics"></a>
-                        <a href="game.html"><figcaption class="caption">Computer</figcaption></a>
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </body>
 </html>
