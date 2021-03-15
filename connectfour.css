@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #dfd9c5;
 }
 
 #menu {
@@ -17,6 +18,10 @@ body {
     width:150px; 
     padding-bottom: 8px;
 }
+
+.menupics:hover {
+    background-color: #fab22f;
+  }
 
 figure.item {
     vertical-align: top;
