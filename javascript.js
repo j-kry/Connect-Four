@@ -85,7 +85,7 @@ btn.onclick = function() {
 }
 //end modal box script
 
-// Get the button that opens the modal
+// Get the button that opens the modal1 and closes current modal
 var modal1 = document.getElementById("myModal1");
 var btn1 = document.getElementById("myBtn1");
 
@@ -93,11 +93,16 @@ var btn1 = document.getElementById("myBtn1");
 // When the user clicks the button, open the modal 
 function colorFunction() {
     modal1.style.display = "block";
+    modal.style.display = "none";
 }
 
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("begin")[0];
 
-
-
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal1.style.display = "none";
+}
 
 //COLOR PICKER JAVASCRIPT CODE
 let colorInput = document.querySelector('#color');

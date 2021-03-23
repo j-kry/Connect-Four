@@ -63,7 +63,8 @@ a {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 55%;
+  height:400px;
   font-size: 20;
 }
 
@@ -90,6 +91,34 @@ a {
 #myBtn1:focus {
     background-color: #0000FF;
     border: none; 
+}
+#arrow {
+    height:50px;
+    width:50px;
+    margin-left:640px;
+}
+
+
+.colorChoice {
+    padding-left: 30px;
+}
+
+/* The Close Button */
+.begin {
+    margin-left: 640px;
+    font-size:20px;
+    background-color: #add8e6;
+    color:black;
+    padding:7px;
+    border: none;
+    margin-top:5px;
+}
+
+.begin:hover,
+.begin:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* for game.html */
@@ -186,7 +215,3 @@ a {
                 left: 315px;
             }
         }
-#arrow {
-    height:50px;
-    width:50px;
-}
