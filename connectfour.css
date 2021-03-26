@@ -6,6 +6,9 @@ body {
     background-color: lightblue;
     margin: 0 auto;
     place-items: center center;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 }
 
@@ -26,10 +29,13 @@ body {
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 .menupics:hover {
     background-color: #fab22f;
   }
 =======
+=======
+>>>>>>> Stashed changes
 .menuimg:hover{
     /*color: #fab22f;*/
     filter: invert(27%)
@@ -39,6 +45,9 @@ body {
             brightness(175%)
             contrast(97%);
 }
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 figure.item {
@@ -60,6 +69,29 @@ a {
 <<<<<<< Updated upstream
 }
 =======
+}
+
+/* Start Button */
+#myBtn{
+    display: block;
+    background-color: #ee2f4e;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 /* Start Button */
