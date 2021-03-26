@@ -1,6 +1,12 @@
 body {
     font-family: Arial, sans-serif;
+<<<<<<< Updated upstream
     background-color: #dfd9c5;
+=======
+    background-color: lightblue;
+    margin: 0 auto;
+    place-items: center center;
+>>>>>>> Stashed changes
 }
 
 #menu {
@@ -14,14 +20,26 @@ body {
     font-size: 20;
 }
 
-.menupics {
+.menuimg {
     width:150px; 
     padding-bottom: 8px;
 }
 
+<<<<<<< Updated upstream
 .menupics:hover {
     background-color: #fab22f;
   }
+=======
+.menuimg:hover{
+    /*color: #fab22f;*/
+    filter: invert(27%)
+            sepia(80%)
+            saturate(2500%)
+            hue-rotate(37deg)
+            brightness(175%)
+            contrast(97%);
+}
+>>>>>>> Stashed changes
 
 figure.item {
     vertical-align: top;
@@ -39,4 +57,153 @@ figure.item {
 a {
     text-decoration: none;
     color: white;
+<<<<<<< Updated upstream
 }
+=======
+}
+
+/* Start Button */
+#myBtn{
+    display: block;
+    background-color: #ee2f4e;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    color:white;
+    font-size:30px;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #0000FF;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    font-size: 20;
+}
+
+/* for game.html */
+ *{box-sizing: border-box}
+
+        .container {
+            width: 720px;
+            height: 720px;
+            overflow: hidden;
+            margin: 50px auto 0 auto;
+            background-color: #1d70ec;
+            position: relative;
+        }
+
+        .container .column {
+            float: left;
+            position: absolute;
+            width: 90px;
+            height: 720px;
+            border: 1px solid #000;  
+        }
+        
+        #column2 {
+            left: 90px;
+        }
+        #column3 {
+            left: 180px;
+        }
+        #column4 {
+            left: 270px;
+        }
+        #column5 {
+            left: 360px;
+        }
+        #column6 {
+            left: 450px;
+        }
+        #column7 {
+            left: 540px;
+        }
+        #column8 {
+            left: 630px;
+        }
+
+        .container .dot {
+            float: left;
+            width: 80px;
+            height: 80px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            transition: all .25s ease-in-out;
+            line-height: 100px;
+            margin: 5px;
+            background-color: #fff;
+        }
+
+        @media only screen and (max-width: 768px) {
+            /* For mobile phones: */
+            .container {
+                width: 360px;
+                height: 360px;
+            }
+
+            .container .dot {
+                width: 40px;
+                height: 40px;
+                margin: 2.5px;
+            }
+
+            .container .column {
+                width: 45px;
+                height: 360px;
+            }
+
+            #column2 {
+                left: 45px;
+            }
+            #column3 {
+                left: 90px;
+            }
+            #column4 {
+                left: 135px;
+            }
+            #column5 {
+                left: 180px;
+            }
+            #column6 {
+                left: 225px;
+            }
+            #column7 {
+                left: 270px;
+            }
+            #column8 {
+                left: 315px;
+            }
+        }
+>>>>>>> Stashed changes
