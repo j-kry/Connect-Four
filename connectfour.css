@@ -68,8 +68,6 @@ a {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-.container {
-    background-size:cover;
 }
 
 /* The Modal (background) */
@@ -97,59 +95,6 @@ a {
     border: 1px solid #888;
     width: 80%;
     font-size: 20;
-}
-
-.modal1 {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  color:white;
-  font-size:30px;
-}
-
-#myBtn1 {
-    background-color: #0000FF;
-    border: none; 
-}
-#myBtn1:focus {
-    background-color: #0000FF;
-    border: none; 
-}
-#arrow {
-    height:50px;
-    width:50px;
-    margin-left:640px;
-}
-
-
-.colorChoice {
-    padding-left: 30px;
-}
-
-/* The Close Button */
-.begin {
-    margin-left: 640px;
-    font-size:20px;
-    background-color: #add8e6;
-    color:black;
-    padding:7px;
-    border: none;
-    margin-top:5px;
-}
-
-.begin:hover,
-.begin:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
 }
 
 /* for game.html */
