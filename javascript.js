@@ -7,6 +7,12 @@ var player2 = "";
 var indexes = [8, 8, 8, 8, 8, 8, 8, 8];
 var clickedCol = "";
 
+let board = document.getElementById("board");
+
+$(document).ready(function () {
+    board.style.display = "none";
+});
+
 //On mouse enter highlight the column with the player color
 //$(".column") returns everything with a class name of column
 $(".column").mouseenter(function() {
@@ -73,7 +79,7 @@ function placeToken(column, num) {
 
 //For the modal box on game.html
 // Get the modal
-var modal = document.getElementById("myModal");
+var gameTypeModal = document.getElementById("myModal");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
@@ -81,19 +87,20 @@ var btn = document.getElementById("myBtn");
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
-    modal.style.display = "block";
+    gameTypeModal.style.display = "block";
 }
 //end modal box script
 
 // Get the button that opens the modal1 and closes current modal
-var modal1 = document.getElementById("myModal1");
+var colorModal = document.getElementById("myModal1");
 var btn1 = document.getElementById("myBtn1");
 
 
 // When the user clicks the button, open the modal 
 function colorFunction() {
-    modal1.style.display = "block";
-    modal.style.display = "none";
+    gameTypeModal.style.display = "none";
+    colorModal.style.display = "block";
+    
 }
 
 // Get the <span> element that closes the modal
@@ -101,12 +108,18 @@ var span = document.getElementsByClassName("begin")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-  modal1.style.display = "none";
+
+    if(turn == "" && player2 == "") {
+        alert("You must pick a color for each player!");
+    }
+    else {
+        colorModal.style.display = "none";
+        board.style.display = "block";
+    }
 }
 
 //COLOR PICKER JAVASCRIPT CODE
 //Think we need to get rid of hex values
-////////////////////When the page loads you can click and place empty tokens need to fix/////////////////////////
 let colorInput1 = document.querySelector('#color1');
 let colorInput2 = document.querySelector('#color2');
 // let hexInput1 = document.querySelector('#hex1');
