@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+
+    <link rel="stylesheet" type="text/css" href="connectfour.css"/>
+
+</head>
+<body>
+
+    <!-- Trigger/Open The Modal -->
+    <div class = "center">
+        <button id="myBtn">Start Game</button>
+    </div>
+        
     <head>
 
         <link rel="stylesheet" type="text/css" href="connectfour.css"/>
@@ -36,6 +48,109 @@
         <div class="modal-content">
             <center style="font-size:50px;
                            font-weight:bold;">Pick your opponent</center>
+            <div>
+                <div id="images">
+                <figure class="item">
+                    <a href="index.html"><img src="images/player-icon.svg" class="menuimg"></a>
+                    <a href="index.html"><figcaption class="caption">Player</figcaption></a>
+                </figure>
+                <figure class="item">
+                    <a href="index.html"><img src="images/bot-icon.svg" class="menuimg"></a>
+                    <a href="index.html"><figcaption class="caption">Computer</figcaption></a>
+                </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container" id="board">
+        <div class="column" id="column1">
+            <div class="dot" id="c1dot1"></div>
+            <div class="dot" id="c1dot2"></div>
+            <div class="dot" id="c1dot3"></div>
+            <div class="dot" id="c1dot4"></div>
+            <div class="dot" id="c1dot5"></div>
+            <div class="dot" id="c1dot6"></div>
+            <div class="dot" id="c1dot7"></div>
+            <div class="dot" id="c1dot8"></div>
+        </div>
+        <div class="column" id="column2">
+            <div class="dot" id="c2dot1"></div>
+            <div class="dot" id="c2dot2"></div>
+            <div class="dot" id="c2dot3"></div>
+            <div class="dot" id="c2dot4"></div>
+            <div class="dot" id="c2dot5"></div>
+            <div class="dot" id="c2dot6"></div>
+            <div class="dot" id="c2dot7"></div>
+            <div class="dot" id="c2dot8"></div>
+        </div>
+        <div class="column" id="column3">
+            <div class="dot" id="c3dot1"></div>
+            <div class="dot" id="c3dot2"></div>
+            <div class="dot" id="c3dot3"></div>
+            <div class="dot" id="c3dot4"></div>
+            <div class="dot" id="c3dot5"></div>
+            <div class="dot" id="c3dot6"></div>
+            <div class="dot" id="c3dot7"></div>
+            <div class="dot" id="c3dot8"></div>
+        </div>
+        <div class="column" id="column4">
+            <div class="dot" id="c4dot1"></div>
+            <div class="dot" id="c4dot2"></div>
+            <div class="dot" id="c4dot3"></div>
+            <div class="dot" id="c4dot4"></div>
+            <div class="dot" id="c4dot5"></div>
+            <div class="dot" id="c4dot6"></div>
+            <div class="dot" id="c4dot7"></div>
+            <div class="dot" id="c4dot8"></div>
+        </div>
+        <div class="column" id="column5">
+            <div class="dot" id="c5dot1"></div>
+            <div class="dot" id="c5dot2"></div>
+            <div class="dot" id="c5dot3"></div>
+            <div class="dot" id="c5dot4"></div>
+            <div class="dot" id="c5dot5"></div>
+            <div class="dot" id="c5dot6"></div>
+            <div class="dot" id="c5dot7"></div>
+            <div class="dot" id="c5dot8"></div>
+        </div>
+        <div class="column" id="column6">
+            <div class="dot" id="c6dot1"></div>
+            <div class="dot" id="c6dot2"></div>
+            <div class="dot" id="c6dot3"></div>
+            <div class="dot" id="c6dot4"></div>
+            <div class="dot" id="c6dot5"></div>
+            <div class="dot" id="c6dot6"></div>
+            <div class="dot" id="c6dot7"></div>
+            <div class="dot" id="c6dot8"></div>
+        </div>
+        <div class="column" id="column7">
+            <div class="dot" id="c7dot1"></div>
+            <div class="dot" id="c7dot2"></div>
+            <div class="dot" id="c7dot3"></div>
+            <div class="dot" id="c7dot4"></div>
+            <div class="dot" id="c7dot5"></div>
+            <div class="dot" id="c7dot6"></div>
+            <div class="dot" id="c7dot7"></div>
+            <div class="dot" id="c7dot8"></div>
+        </div>
+        <div class="column" id="column8">
+            <div class="dot" id="c8dot1"></div>
+            <div class="dot" id="c8dot2"></div>
+            <div class="dot" id="c8dot3"></div>
+            <div class="dot" id="c8dot4"></div>
+            <div class="dot" id="c8dot5"></div>
+            <div class="dot" id="c8dot6"></div>
+            <div class="dot" id="c8dot7"></div>
+            <div class="dot" id="c8dot8"></div>
+        </div>
+    </div>
+    <script src="jquery.js"></script>
+    <script src="javascript.js"></script>
+
+    
+
+</body>
             <div id="images">
                 <figure class="item">
                     <a href="index.html"><img src="images/player.png" class="menupics"></a>
