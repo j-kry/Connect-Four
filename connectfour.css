@@ -2,7 +2,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: lightblue;
     margin: 0 auto;
-    place-items: center center;
 }
 
 h1 {
@@ -14,19 +13,9 @@ h1 {
     text-align: center;
 }
 
-.menuimg {
+.menupics {
     width:150px; 
     padding-bottom: 8px;
-}
-
-.menuimg:hover{
-    /*color: #fab22f;*/
-    filter: invert(27%)
-            sepia(80%)
-            saturate(2500%)
-            hue-rotate(37deg)
-            brightness(175%)
-            contrast(97%);
 }
 
 figure.item {
@@ -47,6 +36,7 @@ a {
     color: white;
 }
 
+<<<<<<< HEAD
 /* Start Button */
 #myBtn{
     display: block;
@@ -68,33 +58,38 @@ a {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+=======
+.container {
+    background-size:cover;
+>>>>>>> parent of 482a7d1 (Merge pull request #16 from j-kry/john_branch)
 }
 
 /* The Modal (background) */
 .modal {
-    display: block; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    color:white;
-    font-size:30px;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  color:white;
+  font-size:30px;
 }
 
 /* Modal Content */
 .modal-content {
-    background-color: #0000FF;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    font-size: 20;
+  background-color: #0000FF;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 55%;
+  height:400px;
+  font-size: 20;
 }
 
 /* for game.html */
