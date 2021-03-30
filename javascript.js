@@ -109,7 +109,7 @@ var span = document.getElementsByClassName("begin")[0];
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
 
-    if(turn == "" && player2 == "") {
+    if(turn == "" || player2 == "") {
         alert("You must pick a color for each player!");
     }
     else {
