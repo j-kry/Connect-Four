@@ -19,7 +19,7 @@ h1 {
 }
 
 .menupics:hover{
-    /*color: #fab22f;*/
+    color: #fab22f;
     filter: invert(27%)
             sepia(80%)
             saturate(2500%)
