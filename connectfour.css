@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: lightblue;
+    background-color: #c1dae5;
     margin: 0 auto;
     place-items: center center;
 }
@@ -72,9 +72,38 @@ a {
     background-size:cover;
 }
 
+/* Start Button */
+#myBtn{
+    display: block;
+    background-color: #ee2f4e;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    font-size: 24px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
 /* The Modal (background) */
 .modal {
+<<<<<<< Updated upstream
     display: block; /* Hidden by default */
+=======
+    display: none; /* Hidden by default */
+>>>>>>> Stashed changes
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     padding-top: 100px; /* Location of the box */
@@ -87,7 +116,11 @@ a {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     color:white;
     font-size:30px;
+<<<<<<< Updated upstream
 }
+=======
+  }
+>>>>>>> Stashed changes
 
 /* Modal Content */
 .modal-content {
@@ -100,38 +133,39 @@ a {
 }
 
 .modal1 {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  color:white;
-  font-size:30px;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    color:white;
+    font-size:30px;
+  }
+
+ #myBtn1 {
+      background-color: #0000FF;
+      border: none; 
 }
 
-#myBtn1 {
-    background-color: #0000FF;
-    border: none; 
-}
 #myBtn1:focus {
-    background-color: #0000FF;
-    border: none; 
-}
-#arrow {
-    height:50px;
-    width:50px;
-    margin-left:640px;
+      background-color: #0000FF;
+      border: none; 
 }
 
+#arrow {
+      height:50px;
+      width:50px;
+      margin-left:640px;
+}
 
 .colorChoice {
-    padding-left: 30px;
+      padding-left: 30px;
 }
 
 /* The Close Button */
