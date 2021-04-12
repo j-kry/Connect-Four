@@ -1,11 +1,17 @@
 //for the game board
-var turn = "red";
-var player1 = "red";
-var player2 = "yellow";
+var turn = "";
+var player1 = "";
+var player2 = "";
 
 //Array to keep track of which row has a token placed
 var indexes = [8, 8, 8, 8, 8, 8, 8, 8];
 var clickedCol = "";
+
+let board = document.getElementById("board");
+
+$(document).ready(function () {
+    board.style.display = "none";
+});
 
 //On mouse enter highlight the column with the player color
 //$(".column") returns everything with a class name of column
@@ -13,11 +19,11 @@ $(".column").mouseenter(function() {
 
     if(turn == player1) {
         this.style.border = "1px solid " + player1;
-        this.style.backgroundColor = "rgba(255, 0, 0, 0.25)";
+        this.style.backgroundColor = player1;
     }
     else {
         this.style.border = "1px solid " + player2;
-        this.style.backgroundColor = "rgba(255, 255, 0, 0.25)";
+        this.style.backgroundColor = player2;
     }
 });
 
@@ -73,7 +79,7 @@ function placeToken(column, num) {
 
 //For the modal box on game.html
 // Get the modal
-var modal = document.getElementById("myModal");
+var gameTypeModal = document.getElementById("myModal");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
@@ -81,19 +87,20 @@ var btn = document.getElementById("myBtn");
 
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
-    modal.style.display = "block";
+    gameTypeModal.style.display = "block";
 }
 //end modal box script
 
 // Get the button that opens the modal1 and closes current modal
-var modal1 = document.getElementById("myModal1");
+var colorModal = document.getElementById("myModal1");
 var btn1 = document.getElementById("myBtn1");
 
 
 // When the user clicks the button, open the modal 
 function colorFunction() {
-    modal1.style.display = "block";
-    modal.style.display = "none";
+    gameTypeModal.style.display = "none";
+    colorModal.style.display = "block";
+    
 }
 
 // Get the <span> element that closes the modal
@@ -101,18 +108,36 @@ var span = document.getElementsByClassName("begin")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-  modal1.style.display = "none";
+
+    if(turn == "" || player2 == "") {
+        alert("You must pick a color for each player!");
+    }
+    else {
+        colorModal.style.display = "none";
+        board.style.display = "block";
+    }
 }
 
 //COLOR PICKER JAVASCRIPT CODE
-let colorInput = document.querySelector('#color');
-let hexInput = document.querySelector('#hex');
+//Think we need to get rid of hex values
+let colorInput1 = document.querySelector('#color1');
+let colorInput2 = document.querySelector('#color2');
+// let hexInput1 = document.querySelector('#hex1');
+// let hexInput2 = document.querySelector('#hex2');
 
-colorInput.addEventListener('input', () =>{
-    let color = colorInput.value;
-    hexInput.value = color;
+colorInput1.addEventListener('input', () =>{
+    let color1  = colorInput1.value;
 
     //changes background color for now
-    document.body.style.backgroundColor = color;
+    document.body.style.backgroundColor = color1;
+    player1 = color1;
+    turn = player1;
+});
+
+colorInput2.addEventListener('input', () =>{
+   let color2 = colorInput2.value;
+
+    //changes background color for now
+    player2 = color2;
 });
 //end color picker
