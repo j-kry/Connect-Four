@@ -1,0 +1,266 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightblue;
+    margin: 0 auto;
+}
+
+/*h1 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    text-align: center;
+}
+*/
+.header{
+  width: 100%;
+  height: 120px;
+  display: block;
+  background-color: #101010;
+}
+
+.innerhead{
+  width: 90%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  background-color: #101010;
+}
+
+.headlogo{
+  height: 100%;
+  margin:auto;
+  display: table;
+  float: center;
+}
+
+.headlogo h1{
+  color: white;
+  margin: auto;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  font-family: 'Courier New' , monospace;
+  font-size: 50px;
+  font-weight: 200;
+
+}
+
+.headlogo h1 span{
+  font-weight: 800;
+
+}
+
+.menupics {
+    width:150px; 
+    padding-bottom: 8px;
+}
+
+.menupics:hover{
+    color: #fab22f;
+    filter: invert(27%)
+            sepia(80%)
+            saturate(2500%)
+            hue-rotate(37deg)
+            brightness(175%)
+            contrast(97%);
+}
+
+figure.item {
+    vertical-align: top;
+    display:inline-block;
+    text-align: center;
+}
+.caption {
+    display:block;
+}
+
+#images {
+    text-align:center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.container {
+    background-size:cover;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  color:white;
+  font-size:30px;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #0000FF;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 55%;
+  height:400px;
+  font-size: 20;
+}
+
+.modal1 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  color:white;
+  font-size:30px;
+}
+
+#myBtn1 {
+    background-color: #0000FF;
+    border: none; 
+}
+#myBtn1:focus {
+    background-color: #0000FF;
+    border: none; 
+}
+#arrow {
+    height:50px;
+    width:50px;
+    margin-left:640px;
+}
+
+
+.colorChoice {
+    padding-left: 30px;
+}
+
+/* The Close Button */
+.begin {
+    margin-left: 640px;
+    font-size:20px;
+    background-color: #add8e6;
+    color:black;
+    padding:7px;
+    border: none;
+    margin-top:5px;
+}
+
+.begin:hover,
+.begin:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* for index.html */
+ *{box-sizing: border-box}
+
+        .container {
+            width: 720px;
+            height: 720px;
+            overflow: hidden;
+            margin: 50px auto 0 auto;
+            background-color: #1d70ec;
+            position: relative;
+        }
+
+        .container .column {
+            float: left;
+            position: absolute;
+            width: 90px;
+            height: 720px;
+            border: 1px solid #000;  
+        }
+        
+        #column2 {
+            left: 90px;
+        }
+        #column3 {
+            left: 180px;
+        }
+        #column4 {
+            left: 270px;
+        }
+        #column5 {
+            left: 360px;
+        }
+        #column6 {
+            left: 450px;
+        }
+        #column7 {
+            left: 540px;
+        }
+        #column8 {
+            left: 630px;
+        }
+
+        .container .dot {
+            float: left;
+            width: 80px;
+            height: 80px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            transition: all .25s ease-in-out;
+            line-height: 100px;
+            margin: 5px;
+            background-color: #fff;
+        }
+
+        @media only screen and (max-width: 768px) {
+            /* For mobile phones: */
+            .container {
+                width: 360px;
+                height: 360px;
+            }
+
+            .container .dot {
+                width: 40px;
+                height: 40px;
+                margin: 2.5px;
+            }
+
+            .container .column {
+                width: 45px;
+                height: 360px;
+            }
+
+            #column2 {
+                left: 45px;
+            }
+            #column3 {
+                left: 90px;
+            }
+            #column4 {
+                left: 135px;
+            }
+            #column5 {
+                left: 180px;
+            }
+            #column6 {
+                left: 225px;
+            }
+            #column7 {
+                left: 270px;
+            }
+            #column8 {
+                left: 315px;
+            }
+        }
