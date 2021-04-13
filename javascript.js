@@ -60,6 +60,7 @@ function changeTurn() {
 
 function placeToken(column, num) {
 
+    if(indexes[num-1] != 0) {
     //We need to get the id of the bottom-most dot
 
     //column number --> example "c1"
@@ -73,6 +74,8 @@ function placeToken(column, num) {
     document.getElementById(together).style.backgroundColor = turn;
     //decrement the column index
     indexes[num-1]--;
+    }
+    
 
 }
 //end game board script
