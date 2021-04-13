@@ -141,3 +141,15 @@ colorInput2.addEventListener('input', () =>{
     player2 = color2;
 });
 //end color picker
+
+//user chooses player opponent
+function player() {
+    
+}
+//end user chooses player opponent
+
+//user chooses computer opponent
+function computer() {
+    
+}
+//end user chooses computer opponent
