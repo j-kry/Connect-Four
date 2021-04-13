@@ -129,7 +129,7 @@ colorInput1.addEventListener('input', () =>{
     let color1  = colorInput1.value;
 
     //changes background color for now
-    document.body.style.backgroundColor = color1;
+    //document.body.style.backgroundColor = color1;
     player1 = color1;
     turn = player1;
 });
