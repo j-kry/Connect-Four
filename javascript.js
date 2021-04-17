@@ -68,10 +68,10 @@ function placeToken(column, num) {
     //column's row index --> example "dot1"
     var row = "dot" + indexes[num-1];
     //complete id --> example "c1dot1"
-    var together = col + row;
+    var colRow = col + row;
 
     //place token of the player color
-    document.getElementById(together).style.backgroundColor = turn;
+    document.getElementById(colRow).style.backgroundColor = turn;
     //decrement the column index
     indexes[num-1]--;
     }
@@ -121,26 +121,21 @@ span.onclick = function() {
     }
 }
 
-//COLOR PICKER JAVASCRIPT CODE
-//Think we need to get rid of hex values
+//COLOR PICKER
+
 let colorInput1 = document.querySelector('#color1');
 let colorInput2 = document.querySelector('#color2');
-// let hexInput1 = document.querySelector('#hex1');
-// let hexInput2 = document.querySelector('#hex2');
 
 colorInput1.addEventListener('input', () =>{
     let color1  = colorInput1.value;
 
-    //changes background color for now
-    //document.body.style.backgroundColor = color1;
     player1 = color1;
     turn = player1;
 });
 
 colorInput2.addEventListener('input', () =>{
-   let color2 = colorInput2.value;
+    let color2 = colorInput2.value;
 
-    //changes background color for now
     player2 = color2;
 });
 //end color picker
