@@ -7,6 +7,16 @@ var player2 = "";
 var indexes = [8, 8, 8, 8, 8, 8, 8, 8];
 var clickedCol = "";
 
+//Keep track of placed tokens
+var currentBoard = [];
+let currentBoardLength = 64;
+for(var i = 0; i <currentBoardLength; i++) {
+    currentBoard[i] = 0;
+}
+
+//Array with all winning combinations
+let winArray = [];
+
 let board = document.getElementById("board");
 
 $(document).ready(function () {
@@ -39,7 +49,7 @@ $(".column").click(function() {
     //Get the id of the column
     clickedCol = this.id;
 
-    placeToken(clickedCol, clickedCol.substring(6));
+    placeToken(clickedCol.substring(6));
 
     changeTurn();
 
@@ -58,22 +68,47 @@ function changeTurn() {
 
 }
 
-function placeToken(column, num) {
+function placeToken(colNum) {
 
-    if(indexes[num-1] != 0) {
-    //We need to get the id of the bottom-most dot
+    if(indexes[colNum-1] != 0) {
 
-    //column number --> example "c1"
-    var col = "c" + num;
-    //column's row index --> example "dot1"
-    var row = "dot" + indexes[num-1];
-    //complete id --> example "c1dot1"
-    var colRow = col + row;
+        var arrayLabel = document.getElementById("printArray");
+        arrayLabel.innerHTML = "";
 
-    //place token of the player color
-    document.getElementById(colRow).style.backgroundColor = turn;
-    //decrement the column index
-    indexes[num-1]--;
+        //We need to get the id of the bottom-most dot
+
+        //column number --> example "c1"
+        var col = "c" + colNum;
+        //column's row index --> example "dot1"
+        var row = "dot" + indexes[colNum-1];
+        //complete id --> example "c1dot1"
+        var colRow = col + row;
+
+        //place token of the player color
+        document.getElementById(colRow).style.backgroundColor = turn;
+
+        if(turn == player1) {
+            var history = document.getElementById("history");
+            history.innerHTML += colRow + ",";
+
+            //Need to mark location in the array as having a player1 token
+            currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 1;
+        }
+        else{
+            var history2 = document.getElementById("history2");
+            history2.innerHTML += colRow + ",";
+
+            //Need to mark location in the array as having a player2 token
+            currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 2;
+        }
+
+        //decrement the column index
+        indexes[colNum-1]--;
+
+        for(var i = 0; i < currentBoardLength; i++) {
+            arrayLabel.innerHTML += currentBoard[i]  + ",";
+        }
+    
     }
     
 
@@ -112,32 +147,38 @@ var span = document.getElementsByClassName("begin")[0];
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
 
-    if(turn == "" || player2 == "") {
-        alert("You must pick a color for each player!");
-    }
-    else {
-        colorModal.style.display = "none";
-        board.style.display = "block";
-    }
+    // if(turn == "" || player2 == "") {
+    //     alert("You must pick a color for each player!");
+    // }
+    // else {
+    //     colorModal.style.display = "none";
+    //     board.style.display = "block";
+    // }
+    //////////////////////////////////////////////Delete this after debugging//////////////////////////////////////////////
+    player1="blue";
+    player2="red";
+    turn = player1;
+    colorModal.style.display = "none";
+    board.style.display = "block";
 }
 
 //COLOR PICKER
 
-let colorInput1 = document.querySelector('#color1');
-let colorInput2 = document.querySelector('#color2');
+// let colorInput1 = document.querySelector('#color1');
+// let colorInput2 = document.querySelector('#color2');
 
-colorInput1.addEventListener('input', () =>{
-    let color1  = colorInput1.value;
+// colorInput1.addEventListener('input', () =>{
+//     let color1  = colorInput1.value;
 
-    player1 = color1;
-    turn = player1;
-});
+//     player1 = color1;
+//     turn = player1;
+// });
 
-colorInput2.addEventListener('input', () =>{
-    let color2 = colorInput2.value;
+// colorInput2.addEventListener('input', () =>{
+//     let color2 = colorInput2.value;
 
-    player2 = color2;
-});
+//     player2 = color2;
+// });
 //end color picker
 
 //user chooses player opponent
