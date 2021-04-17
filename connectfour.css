@@ -19,7 +19,7 @@ h1 {
 }
 
 .menupics:hover{
-    /*color: #fab22f;*/
+    color: #fab22f;
     filter: invert(27%)
             sepia(80%)
             saturate(2500%)
@@ -41,13 +41,20 @@ figure.item {
     text-align:center;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-}
-
 .container {
     background-size:cover;
+}
+
+/* button for opponent */
+#opponent {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border:none;
+    cursor: pointer;
+    overflow: hidden;
+    outline:none;
+    color:white;
+    font-size: 25px;
 }
 
 /* The Modal (background) */
@@ -94,9 +101,14 @@ a {
   font-size:30px;
 }
 
+/* Next button in modal content */
 #myBtn1 {
-    background-color: #0000FF;
-    border: none; 
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border:none;
+    cursor: pointer;
+    overflow: hidden;
+    outline:none;
 }
 #myBtn1:focus {
     background-color: #0000FF;
