@@ -100,12 +100,13 @@ function placeToken(colNum) {
                 history2.innerHTML += colNum + ",";
 
                 //Need to mark location in the array as having a player2 token
-                currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 2;
+                //currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 2;
             }
 
             //decrement the column index
             indexes[colNum].pop();
 
+            //Displays the array in the console in your browser
             console.table(indexes);
 
         }
