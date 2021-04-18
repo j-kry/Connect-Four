@@ -4,7 +4,14 @@ var player1 = "";
 var player2 = "";
 
 //Array to keep track of which row has a token placed
-var indexes = [8, 8, 8, 8, 8, 8, 8, 8];
+var indexes = [[0,1,2,3,4,5,6,7],
+               [8,9,10,11,12,13,14,15],
+               [16,17,18,19,20,21,22,23],
+               [24,25,26,27,28,29,30,31],
+               [32,33,34,35,36,37,38,39],
+               [40,41,42,43,44,45,46,47],
+               [48,49,50,51,52,53,54,55],
+               [56,57,58,59,60,61,62,63]];
 var clickedCol = "";
 
 //Keep track of placed tokens
@@ -70,46 +77,39 @@ function changeTurn() {
 
 function placeToken(colNum) {
 
-    if(indexes[colNum-1] != 0) {
 
         var arrayLabel = document.getElementById("printArray");
         arrayLabel.innerHTML = "";
 
         //We need to get the id of the bottom-most dot
 
-        //column number --> example "c1"
-        var col = "c" + colNum;
-        //column's row index --> example "dot1"
-        var row = "dot" + indexes[colNum-1];
-        //complete id --> example "c1dot1"
-        var colRow = col + row;
-
         //place token of the player color
-        document.getElementById(colRow).style.backgroundColor = turn;
+        var length = indexes[colNum.length];
+        var place = indexes[colNum[length-1]];
+        alert(place);
+        //document.getElementById(place + "").style.backgroundColor = turn;
 
         if(turn == player1) {
             var history = document.getElementById("history");
-            history.innerHTML += colRow + ",";
+            history.innerHTML += colNum + ",";
 
             //Need to mark location in the array as having a player1 token
-            currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 1;
+            // currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 1;
         }
         else{
             var history2 = document.getElementById("history2");
-            history2.innerHTML += colRow + ",";
+            history2.innerHTML += colNum + ",";
 
             //Need to mark location in the array as having a player2 token
             currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 2;
         }
 
         //decrement the column index
-        indexes[colNum-1]--;
+        indexes[colNum.pop()];
 
-        for(var i = 0; i < currentBoardLength; i++) {
-            arrayLabel.innerHTML += currentBoard[i]  + ",";
-        }
-    
-    }
+        // for(var i = 0; i < currentBoardLength; i++) {
+        //     arrayLabel.innerHTML += currentBoard[i]  + ",";
+        // }
     
 
 }
