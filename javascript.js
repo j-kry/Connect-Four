@@ -78,38 +78,37 @@ function changeTurn() {
 function placeToken(colNum) {
 
 
-        var arrayLabel = document.getElementById("printArray");
-        arrayLabel.innerHTML = "";
-
-        //We need to get the id of the bottom-most dot
-
         //place token of the player color
         var length = indexes[colNum].length;
-        var place = indexes[colNum][length-1];
-        //alert(place);
-        document.getElementById(place).style.backgroundColor = turn;
 
-        if(turn == player1) {
-            var history = document.getElementById("history");
-            history.innerHTML += colNum + ",";
+        if(length>0) {
 
-            //Need to mark location in the array as having a player1 token
-            // currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 1;
+            var place = indexes[colNum][length-1];
+
+
+            document.getElementById(place).style.backgroundColor = turn;
+
+            if(turn == player1) {
+                var history = document.getElementById("history");
+                history.innerHTML += colNum + ",";
+
+                //Need to mark location in the array as having a player1 token
+                // currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 1;
+            }
+            else{
+                var history2 = document.getElementById("history2");
+                history2.innerHTML += colNum + ",";
+
+                //Need to mark location in the array as having a player2 token
+                currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 2;
+            }
+
+            //decrement the column index
+            indexes[colNum].pop();
+
+            console.table(indexes);
+
         }
-        else{
-            var history2 = document.getElementById("history2");
-            history2.innerHTML += colNum + ",";
-
-            //Need to mark location in the array as having a player2 token
-            currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 2;
-        }
-
-        //decrement the column index
-        indexes[colNum].pop();
-
-        // for(var i = 0; i < currentBoardLength; i++) {
-        //     arrayLabel.innerHTML += currentBoard[i]  + ",";
-        // }
     
 
 }
