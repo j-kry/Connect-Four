@@ -84,10 +84,10 @@ function placeToken(colNum) {
         //We need to get the id of the bottom-most dot
 
         //place token of the player color
-        var length = indexes[colNum.length];
-        var place = indexes[colNum[length-1]];
-        alert(place);
-        //document.getElementById(place + "").style.backgroundColor = turn;
+        var length = indexes[colNum].length;
+        var place = indexes[colNum][length-1];
+        //alert(place);
+        document.getElementById(place).style.backgroundColor = turn;
 
         if(turn == player1) {
             var history = document.getElementById("history");
@@ -105,7 +105,7 @@ function placeToken(colNum) {
         }
 
         //decrement the column index
-        indexes[colNum.pop()];
+        indexes[colNum].pop();
 
         // for(var i = 0; i < currentBoardLength; i++) {
         //     arrayLabel.innerHTML += currentBoard[i]  + ",";
