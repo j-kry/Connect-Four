@@ -113,6 +113,13 @@ function placeToken(colNum) {
     
 
 }
+
+function checkWin() {
+
+
+    
+}
+
 //end game board script
 
 //For the modal box on game.html
