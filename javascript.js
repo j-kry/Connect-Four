@@ -4,8 +4,25 @@ var player1 = "";
 var player2 = "";
 
 //Array to keep track of which row has a token placed
-var indexes = [8, 8, 8, 8, 8, 8, 8, 8];
+var indexes = [[0,1,2,3,4,5,6,7],
+               [8,9,10,11,12,13,14,15],
+               [16,17,18,19,20,21,22,23],
+               [24,25,26,27,28,29,30,31],
+               [32,33,34,35,36,37,38,39],
+               [40,41,42,43,44,45,46,47],
+               [48,49,50,51,52,53,54,55],
+               [56,57,58,59,60,61,62,63]];
 var clickedCol = "";
+
+//Keep track of placed tokens
+var currentBoard = [];
+let currentBoardLength = 64;
+for(var i = 0; i <currentBoardLength; i++) {
+    currentBoard[i] = 0;
+}
+
+//Array with all winning combinations
+let winArray = [];
 
 let board = document.getElementById("board");
 
@@ -39,7 +56,7 @@ $(".column").click(function() {
     //Get the id of the column
     clickedCol = this.id;
 
-    placeToken(clickedCol, clickedCol.substring(6));
+    placeToken(clickedCol.substring(6));
 
     changeTurn();
 
@@ -58,26 +75,51 @@ function changeTurn() {
 
 }
 
-function placeToken(column, num) {
+function placeToken(colNum) {
 
-    if(indexes[num-1] != 0) {
-    //We need to get the id of the bottom-most dot
 
-    //column number --> example "c1"
-    var col = "c" + num;
-    //column's row index --> example "dot1"
-    var row = "dot" + indexes[num-1];
-    //complete id --> example "c1dot1"
-    var together = col + row;
+        //place token of the player color
+        var length = indexes[colNum].length;
 
-    //place token of the player color
-    document.getElementById(together).style.backgroundColor = turn;
-    //decrement the column index
-    indexes[num-1]--;
-    }
+        if(length>0) {
+
+            var place = indexes[colNum][length-1];
+
+
+            document.getElementById(place).style.backgroundColor = turn;
+
+            if(turn == player1) {
+                var history = document.getElementById("history");
+                history.innerHTML += colNum + ",";
+
+                //Need to mark location in the array as having a player1 token
+                // currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 1;
+            }
+            else{
+                var history2 = document.getElementById("history2");
+                history2.innerHTML += colNum + ",";
+
+                //Need to mark location in the array as having a player2 token
+                //currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 2;
+            }
+
+            //decrement the column index
+            indexes[colNum].pop();
+
+            //Displays the array in the console in your browser
+            console.table(indexes);
+
+        }
     
 
 }
+
+function checkWin() {
+
+
+    
+}
+
 //end game board script
 
 //For the modal box on game.html
@@ -112,37 +154,38 @@ var span = document.getElementsByClassName("begin")[0];
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
 
-    if(turn == "" || player2 == "") {
-        alert("You must pick a color for each player!");
-    }
-    else {
-        colorModal.style.display = "none";
-        board.style.display = "block";
-    }
+    // if(turn == "" || player2 == "") {
+    //     alert("You must pick a color for each player!");
+    // }
+    // else {
+    //     colorModal.style.display = "none";
+    //     board.style.display = "block";
+    // }
+    //////////////////////////////////////////////Delete this after debugging//////////////////////////////////////////////
+    player1="blue";
+    player2="red";
+    turn = player1;
+    colorModal.style.display = "none";
+    board.style.display = "block";
 }
 
-//COLOR PICKER JAVASCRIPT CODE
-//Think we need to get rid of hex values
-let colorInput1 = document.querySelector('#color1');
-let colorInput2 = document.querySelector('#color2');
-// let hexInput1 = document.querySelector('#hex1');
-// let hexInput2 = document.querySelector('#hex2');
+//COLOR PICKER
 
-colorInput1.addEventListener('input', () =>{
-    let color1  = colorInput1.value;
+// let colorInput1 = document.querySelector('#color1');
+// let colorInput2 = document.querySelector('#color2');
 
-    //changes background color for now
-    //document.body.style.backgroundColor = color1;
-    player1 = color1;
-    turn = player1;
-});
+// colorInput1.addEventListener('input', () =>{
+//     let color1  = colorInput1.value;
 
-colorInput2.addEventListener('input', () =>{
-   let color2 = colorInput2.value;
+//     player1 = color1;
+//     turn = player1;
+// });
 
-    //changes background color for now
-    player2 = color2;
-});
+// colorInput2.addEventListener('input', () =>{
+//     let color2 = colorInput2.value;
+
+//     player2 = color2;
+// });
 //end color picker
 
 //user chooses player opponent
