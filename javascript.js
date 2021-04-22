@@ -14,18 +14,27 @@ var indexes = [[0,1,2,3,4,5,6,7],
                [56,57,58,59,60,61,62,63]];
 var clickedCol = "";
 
-//Keep track of placed tokens
-var currentBoard = [];
-let currentBoardLength = 64;
-for(var i = 0; i <currentBoardLength; i++) {
-    currentBoard[i] = 0;
-}
+// //Keep track of placed tokens
+// var currentBoard = [];
+// let currentBoardLength = 64;
+// for(var i = 0; i <currentBoardLength; i++) {
+//     currentBoard[i] = 0;
+// }
 
-//Array with all winning combinations
-let winArray = [];
+//Array to check win
+let winArray = [[0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0],
+                [0,0,0,0,0,0,0,0]];
 
+//Initialize the board
 let board = document.getElementById("board");
 
+//Hide the board initially
 $(document).ready(function () {
     board.style.display = "none";
 });
@@ -56,11 +65,12 @@ $(".column").click(function() {
     //Get the id of the column
     clickedCol = this.id;
 
+    //Substring the id of the column just to get the number
     placeToken(clickedCol.substring(6));
 
     changeTurn();
 
-    //TODO make color change to next players color
+    //Changes the column color back to the board color and border
     this.style.border = "1px solid #000";
     this.style.backgroundColor = "#1d70ec";
 
@@ -83,39 +93,48 @@ function placeToken(colNum) {
 
         if(length>0) {
 
+            //Get the location of where to place a token
+            //The row of the column that gets placed is popped from the array at the end of this function
             var place = indexes[colNum][length-1];
 
-
+            //Place a token by changing the background color
             document.getElementById(place).style.backgroundColor = turn;
 
             if(turn == player1) {
+
+                //Move history for player1
                 var history = document.getElementById("history");
                 history.innerHTML += colNum + ",";
 
-                //Need to mark location in the array as having a player1 token
-                // currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 1;
+                //Need to mark location in the win array as having a player1 token
+                winArray[colNum][length-1] = 1;
             }
             else{
+
+                //Move history for player 2
                 var history2 = document.getElementById("history2");
                 history2.innerHTML += colNum + ",";
 
-                //Need to mark location in the array as having a player2 token
-                //currentBoard[currentBoardLength - indexes[colNum-1] * colNum] = 2;
+                //Need to mark location in the win array as having a player2 token
+                winArray[colNum][length-1] = 2;
             }
 
-            //decrement the column index
+            //Remove the row that has a token in it now from the index array
             indexes[colNum].pop();
 
-            //Displays the array in the console in your browser
+            //Displays the arrays in the console in your browser
             console.table(indexes);
+            console.log("///////////////////////////////////////////////////\n///////////////////////////////////////////////////")
+            console.table(winArray);
 
         }
     
 
 }
 
-function checkWin() {
+function checkWin(winArray) {
 
+    //Brother may I have the loops
 
     
 }
