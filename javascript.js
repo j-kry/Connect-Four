@@ -2,6 +2,7 @@
 var turn = "";
 var player1 = "";
 var player2 = "";
+var winner = "";
 
 //Array to keep track of which row has a token placed
 var indexes = [[0,1,2,3,4,5,6,7],
@@ -42,6 +43,8 @@ $(document).ready(function () {
 //On mouse enter highlight the column with the player color
 //$(".column") returns everything with a class name of column
 $(".column").mouseenter(function() {
+
+    //checkD();
 
     if(turn == player1) {
         this.style.border = "1px solid " + player1;
@@ -87,6 +90,7 @@ function changeTurn() {
 
 function placeToken(colNum) {
 
+        var winPlayer = 0;
 
         //place token of the player color
         var length = indexes[colNum].length;
@@ -102,6 +106,8 @@ function placeToken(colNum) {
 
             if(turn == player1) {
 
+                winPlayer = 1;
+
                 //Move history for player1
                 var history = document.getElementById("history");
                 history.innerHTML += colNum + ",";
@@ -111,6 +117,8 @@ function placeToken(colNum) {
             }
             else{
 
+                winPlayer = 2;
+
                 //Move history for player 2
                 var history2 = document.getElementById("history2");
                 history2.innerHTML += colNum + ",";
@@ -118,6 +126,13 @@ function placeToken(colNum) {
                 //Need to mark location in the win array as having a player2 token
                 winArray[colNum][length-1] = 2;
             }
+
+            //Check for win
+            winPlayer = checkWin(colNum, length-1, winPlayer);
+            if(winPlayer == 1)
+                alert("Player 1 wins!");
+            else if(winPlayer == 2)
+                alert("Player 2 wins!");
 
             //Remove the row that has a token in it now from the index array
             indexes[colNum].pop();
@@ -132,11 +147,129 @@ function placeToken(colNum) {
 
 }
 
-function checkWin(winArray) {
+function checkWin(col, row, player) {
 
-    //Brother may I have the loops
+    var count = 0;
 
+    //Horizontal Check
+    for(var i = 0; i < 8; i++) {
+
+        if(winArray[i][row] == player) {
+
+            count++;
+            if(count >= 4)
+                return player;
+
+        }
+        else
+            count = 0;
+    }
+
+    //Vertical Check
+    for(var i = 0; i < 8; i++) {
+
+        if(winArray[col][i] == player) {
+
+            count++;
+            if(count >= 4)
+                return player;
+
+        }
+        else
+            count = 0;
+    }
+
+    //Diagonal Left to Right Bottom Half
+    for(var rowStart = 0; rowStart < 5; rowStart++) {
+
+        for(var dRow = rowStart, dCol = 0; dRow < 8 && dCol < 8; dRow++, dCol++) {
+
+            if(winArray[dCol][dRow] == player) {
+
+                count++;
+                if(count >= 4)
+                    return player;
+
+            }
+            else
+                count = 0;
+
+        }
+
+    }
+
+    //Diagonal Left to Right Top Half
+    for(var colStart = 1; colStart < 5; colStart++) {
+
+        for(var dRow = 0, dCol = colStart; dRow < 8 && dCol < 8; dRow++, dCol++) {
+
+            if(winArray[dCol][dRow] == player) {
+
+                count++;
+                if(count >= 4)
+                    return player;
+
+            }
+            else
+                count = 0;
+
+        }
+
+    }
+
+    //Diagonal Right to Left Bottom Half
+    for(var rowStart = 0; rowStart < 5; rowStart++) {
+
+        for(var dRow = rowStart, dCol = 7; dRow < 8 && dCol >= 0; dRow++, dCol--) {
+
+            if(winArray[dCol][dRow] == player) {
+
+                count++;
+                if(count >= 4)
+                    return player;
+
+            }
+            else
+                count = 0;
+
+        }
+
+    }
+
+    //Diagonal Right to Left Top Half
+    for(var colStart = 6; colStart > 2; colStart--) {
+
+        for(var dRow = 0, dCol = colStart; dRow < 8 && dCol >= 0; dRow++, dCol--) {
+
+            if(winArray[dCol][dRow] == player) {
+
+                count++;
+                if(count >= 4)
+                    return player;
+
+            }
+            else
+                count = 0;
+
+        }
+
+    }
     
+}
+
+function checkD() {
+
+    for(var colStart = 6; colStart > 2; colStart--) {
+
+        for(var dRow = 0, dCol = colStart; dRow < 8 && dCol >= 0; dRow++, dCol--) {
+
+            document.getElementById(indexes[dCol][dRow]).style.backgroundColor = "yellow";
+
+        }
+
+    }
+
+
 }
 
 //end game board script
