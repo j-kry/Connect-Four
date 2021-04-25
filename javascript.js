@@ -91,6 +91,7 @@ function changeTurn() {
 function placeToken(colNum) {
 
         var winPlayer = 0;
+        var winner;
 
         //place token of the player color
         var length = indexes[colNum].length;
@@ -128,11 +129,10 @@ function placeToken(colNum) {
             }
 
             //Check for win
-            winPlayer = checkWin(colNum, length-1, winPlayer);
-            if(winPlayer == 1)
-                alert("Player 1 wins!");
-            else if(winPlayer == 2)
-                alert("Player 2 wins!");
+            winner = checkWin(colNum, length-1, winPlayer);
+            
+            if(winner != null)
+                gameOver(winner);
 
             //Remove the row that has a token in it now from the index array
             indexes[colNum].pop();
@@ -144,6 +144,21 @@ function placeToken(colNum) {
 
         }
     
+
+}
+
+function gameOver(winner) {
+
+    board.style.display = "none";
+    alert("Player " + winner + " wins!");
+    
+    if(window.confirm("Would you like to play again?")) {
+        window.location = '/index.html';
+    }
+    else {
+
+    }
+
 
 }
 
