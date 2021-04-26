@@ -153,7 +153,7 @@ function gameOver(winner) {
     alert("Player " + winner + " wins!");
     
     if(window.confirm("Would you like to play again?")) {
-        window.location = '/index.html';
+        location.reload();
     }
     else {
 
@@ -321,38 +321,32 @@ var span = document.getElementsByClassName("begin")[0];
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
 
-    // if(turn == "" || player2 == "") {
-    //     alert("You must pick a color for each player!");
-    // }
-    // else {
-    //     colorModal.style.display = "none";
-    //     board.style.display = "block";
-    // }
-    //////////////////////////////////////////////Delete this after debugging//////////////////////////////////////////////
-    player1="blue";
-    player2="red";
-    turn = player1;
-    colorModal.style.display = "none";
-    board.style.display = "block";
+    if(turn == "" || player2 == "") {
+        alert("You must pick a color for each player!");
+    }
+    else {
+        colorModal.style.display = "none";
+        board.style.display = "block";
+    }
 }
 
 //COLOR PICKER
 
-// let colorInput1 = document.querySelector('#color1');
-// let colorInput2 = document.querySelector('#color2');
+let colorInput1 = document.querySelector('#color1');
+let colorInput2 = document.querySelector('#color2');
 
-// colorInput1.addEventListener('input', () =>{
-//     let color1  = colorInput1.value;
+colorInput1.addEventListener('input', () =>{
+    let color1  = colorInput1.value;
 
-//     player1 = color1;
-//     turn = player1;
-// });
+    player1 = color1;
+    turn = player1;
+});
 
-// colorInput2.addEventListener('input', () =>{
-//     let color2 = colorInput2.value;
+colorInput2.addEventListener('input', () =>{
+    let color2 = colorInput2.value;
 
-//     player2 = color2;
-// });
+    player2 = color2;
+});
 //end color picker
 
 //user chooses player opponent
