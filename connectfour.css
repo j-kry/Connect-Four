@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #c1dae5;
     margin: 0 auto;
+    background: #060d92;  
 }
 
 h1 {
@@ -53,7 +53,7 @@ a {
 /* Start Button */
 #myBtn{
     display: block;
-    background-color: #ee2f4e;
+    background-color: #0000FF;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -64,6 +64,14 @@ a {
     font-size: 24px;
     margin: 0px auto;
     position: relative;
+}
+
+#myBtn:hover,
+#myBtn:focus {
+    background-color: #ee2f4e;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .center{
@@ -142,7 +150,7 @@ a {
 .begin {
     margin-left: 640px;
     font-size:20px;
-    background-color: #add8e6;
+    background-color: #c1dae5;
     color:black;
     padding:7px;
     border: none;
@@ -151,7 +159,8 @@ a {
 
 .begin:hover,
 .begin:focus {
-  color: #000;
+  background-color: #fab22f;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
 }
