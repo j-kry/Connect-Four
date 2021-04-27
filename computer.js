@@ -140,7 +140,12 @@ function placeToken(colNum) {
 
 function gameOver(winner) {
 
-    alert("Player " + winner + " wins!");
+    if(winner == 2)
+        winner = "Computer";
+    else
+        winner = "Player 1"
+
+    alert(winner + " wins!");
     
     if(window.confirm("Would you like to play again?")) {
         location.reload();
