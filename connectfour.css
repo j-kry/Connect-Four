@@ -143,6 +143,52 @@ figure.item {
   cursor: pointer;
 }
 
+.column {
+    float:left;
+}
+
+.colorSection {
+    width:40%;
+}
+
+.or {
+    width:20%;
+}
+
+.defaultColorSection {
+    width:40%;
+    padding-top: 70px;
+    padding-left: 50px;
+    position:relative;
+    height:auto;
+}
+
+#defaultButton {
+    font-size:20px;
+    background-color: #FFFFFF;
+    color:black;
+    padding:7px;
+    border: none;
+    margin-top:5px;
+}
+
+#or {
+    text-align:center;
+    line-height:200px;
+}
+
+#red {
+    width:20%;
+}
+
+#yellow {
+    width:20%;
+}
+
+#colors {
+    padding-left: 70px;
+}
+
 /* for index.html */
  *{box-sizing: border-box}
 
