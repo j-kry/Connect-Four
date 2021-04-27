@@ -163,25 +163,25 @@ figure.item {
             border: 1px solid #000;  
         }
         
-        #column2 {
+        #column1 {
             left: 90px;
         }
-        #column3 {
+        #column2 {
             left: 180px;
         }
-        #column4 {
+        #column3 {
             left: 270px;
         }
-        #column5 {
+        #column4 {
             left: 360px;
         }
-        #column6 {
+        #column5 {
             left: 450px;
         }
-        #column7 {
+        #column6 {
             left: 540px;
         }
-        #column8 {
+        #column7 {
             left: 630px;
         }
 
@@ -215,25 +215,25 @@ figure.item {
                 height: 360px;
             }
 
-            #column2 {
+            #column1 {
                 left: 45px;
             }
-            #column3 {
+            #column2 {
                 left: 90px;
             }
-            #column4 {
+            #column3 {
                 left: 135px;
             }
-            #column5 {
+            #column4 {
                 left: 180px;
             }
-            #column6 {
+            #column5 {
                 left: 225px;
             }
-            #column7 {
+            #column6 {
                 left: 270px;
             }
-            #column8 {
+            #column7 {
                 left: 315px;
             }
         }
