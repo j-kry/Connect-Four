@@ -264,13 +264,15 @@ function checkWin(col, row, player) {
 
 function computer(lastCol, lastRow) {
 
+    lastCol = Math.floor(lastCol);
+
     var newCol = lastCol;
-    var max;
-    var min;
+    var max = 0;
+    var min = 0;
 
     if(lastCol >= 2 && lastCol <= 5) {
-        max = lastCol + 2;
         min = lastCol - 2;
+        max = lastCol + 2;
     }
     else if(lastCol < 2) {
         min = 0;
@@ -281,7 +283,8 @@ function computer(lastCol, lastRow) {
         max = 7;
     }
 
-    alert("min is " + min + "\n max is " + max);
+    max = Math.floor(max);
+    min = Math.floor(min);
 
     if(lastRow > 0)
         newCol = getRandom(min, max);
@@ -292,9 +295,7 @@ function computer(lastCol, lastRow) {
         }
         while(lastCol == newCol);
 
-    } 
-    
-    alert("New col is " + newCol);
+    }
 
     placeToken(newCol);
 
