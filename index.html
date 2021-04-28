@@ -19,10 +19,10 @@
                                font-weight:bold;">Pick your opponent</center>
                 <div id="images">
                     <button id="opponent" onclick="player()">
-                    <figure class="item">
-                        <img src="images/player-icon.svg" class="menupics">
-                        <figcaption class="caption">Player</figcaption>
-                    </figure>
+                        <figure class="item">
+                            <img src="images/player-icon.svg" class="menupics">
+                            <figcaption class="caption">Player</figcaption>
+                        </figure>
                     </button>
                     <button id="opponent">
                     <a href="computer.html"><figure class="item">
@@ -41,17 +41,28 @@
                 <label for="color" style="font-size:50px;
                                           font-weight:bold; display:block; text-align:center;">Select your Color</label>
                 <br>
-                <p class="colorChoice">Player 1:
-                <input type="text" id="hex1">
-                    <input type="color" id="color1"></p>
-                
-                <p class="colorChoice">Player 2:
-                <input type="text" id="hex2">
-                    <input type="color" id="color2"></p>
+                <div class="column colorSection">
+                    <p class="colorChoice">Player 1:
+                        <input type="text" id="hex1">
+                        <input type="color" id="color1"></p>
+
+                    <p class="colorChoice">Player 2:
+                        <input type="text" id="hex2">
+                        <input type="color" id="color2"></p>
+                </div>
+                <div class="column or">
+                    <p id="or">OR</p>
+                </div>
+                <div class="column defaultColorSection">
+                    <div id="colors">
+                        <img id="red" src="images/redcircle.png">
+                        <img id="yellow" src="images/yellowcircle.png">
+                    </div>
+                    <p>Play with default colors</p>
+                </div>
                 <span class="begin">Begin</span>
             </div>
         </div>
-
         <div class="container" id="board">
             <div class="column" id="column0">
                 <div class="dot" id="0"></div>
@@ -137,7 +148,7 @@
 
         <p id="history">Player 1 History: </p>
         <p id="history2">Player 2 History: </p>
-        
+
         <script src="jquery.js"></script>
         <script src="javascript.js"></script>
 
