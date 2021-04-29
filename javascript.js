@@ -140,14 +140,13 @@ function placeToken(colNum) {
 
 function gameOver(winner) {
 
-    board.style.display = "none";
+    //Make the page not interactable by displaying an overlay
+    document.getElementById("overlay").style.display = "block";
+    
     alert("Player " + winner + " wins!");
 
     if(window.confirm("Would you like to play again?")) {
         location.reload();
-    }
-    else {
-
     }
 
 
@@ -289,19 +288,7 @@ function isComputerMatch() {
 
 //end game board script
 
-//For the modal box on game.html
-// Get the modal
 var gameTypeModal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    gameTypeModal.style.display = "block";
-}
-//end modal box script
 
 // Get the button that opens the modal1 and closes current modal
 var colorModal = document.getElementById("myModal1");
@@ -341,6 +328,8 @@ var span = document.getElementsByClassName("begin")[0];
 span.onclick = function() {
     colorModal.style.display = "none";
     board.style.display = "block";
+    document.getElementById("history").hidden = false;
+    document.getElementById("history2").hidden = false;
     player1 = "red";
     player2 = "yellow";
     turn = "red";

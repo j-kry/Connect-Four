@@ -140,6 +140,9 @@ function placeToken(colNum) {
 
 function gameOver(winner) {
 
+    //Make the page not interactable by displaying an overlay
+    document.getElementById("overlay").style.display = "block";
+
     if(winner == 2)
         winner = "Computer";
     else
@@ -150,10 +153,6 @@ function gameOver(winner) {
     if(window.confirm("Would you like to play again?")) {
         location.reload();
     }
-    else {
-
-    }
-
 
 }
 
