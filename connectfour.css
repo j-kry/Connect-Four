@@ -63,7 +63,7 @@ figure.item {
 
 /* The Modal (background) */
 .modal {
-  display: block; /* Hidden by default */
+  display: block;
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
@@ -90,7 +90,7 @@ figure.item {
 }
 
 .modal1 {
-  display: none;
+  display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
