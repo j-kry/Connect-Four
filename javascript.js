@@ -81,60 +81,60 @@ function changeTurn() {
 
 function placeToken(colNum) {
 
-        var winPlayer = 0;
-        var winner;
+    var winPlayer = 0;
+    var winner;
 
-        //place token of the player color
-        var length = indexes[colNum].length;
+    //place token of the player color
+    var length = indexes[colNum].length;
 
-        if(length>0) {
+    if(length>0) {
 
-            //Get the location of where to place a token
-            //The row of the column that gets placed is popped from the array at the end of this function
-            var place = indexes[colNum][length-1];
+        //Get the location of where to place a token
+        //The row of the column that gets placed is popped from the array at the end of this function
+        var place = indexes[colNum][length-1];
 
-            //Place a token by changing the background color
-            document.getElementById(place).style.backgroundColor = turn;
+        //Place a token by changing the background color
+        document.getElementById(place).style.backgroundColor = turn;
 
-            if(turn == player1) {
+        if(turn == player1) {
 
-                winPlayer = 1;
+            winPlayer = 1;
 
-                //Move history for player1
-                var history = document.getElementById("history");
-                history.innerHTML += colNum + ",";
+            //Move history for player1
+            var history = document.getElementById("history");
+            history.innerHTML += colNum + ",";
 
-                //Need to mark location in the win array as having a player1 token
-                winArray[colNum][length-1] = 1;
-            }
-            else{
-
-                winPlayer = 2;
-
-                //Move history for player 2
-                var history2 = document.getElementById("history2");
-                history2.innerHTML += colNum + ",";
-
-                //Need to mark location in the win array as having a player2 token
-                winArray[colNum][length-1] = 2;
-            }
-
-            //Check for win
-            winner = checkWin(colNum, length-1, winPlayer);
-            
-            if(winner != null)
-                gameOver(winner);
-
-            //Remove the row that has a token in it now from the index array
-            indexes[colNum].pop();
-
-            //Displays the arrays in the console in your browser
-            console.table(indexes);
-            console.log("///////////////////////////////////////////////////\n///////////////////////////////////////////////////")
-            console.table(winArray);
-
+            //Need to mark location in the win array as having a player1 token
+            winArray[colNum][length-1] = 1;
         }
-    
+        else{
+
+            winPlayer = 2;
+
+            //Move history for player 2
+            var history2 = document.getElementById("history2");
+            history2.innerHTML += colNum + ",";
+
+            //Need to mark location in the win array as having a player2 token
+            winArray[colNum][length-1] = 2;
+        }
+
+        //Check for win
+        winner = checkWin(colNum, length-1, winPlayer);
+
+        if(winner != null)
+            gameOver(winner);
+
+        //Remove the row that has a token in it now from the index array
+        indexes[colNum].pop();
+
+        //Displays the arrays in the console in your browser
+        console.table(indexes);
+        console.log("///////////////////////////////////////////////////\n///////////////////////////////////////////////////")
+        console.table(winArray);
+
+    }
+
 
 }
 
@@ -142,7 +142,7 @@ function gameOver(winner) {
 
     board.style.display = "none";
     alert("Player " + winner + " wins!");
-    
+
     if(window.confirm("Would you like to play again?")) {
         location.reload();
     }
@@ -260,7 +260,7 @@ function checkWin(col, row, player) {
         }
 
     }
-    
+
 }
 
 function computer(lastCol, lastRow) {
@@ -312,26 +312,9 @@ var btn1 = document.getElementById("myBtn1");
 function colorFunction() {
     gameTypeModal.style.display = "none";
     colorModal.style.display = "block";
-    
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("begin")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-
-    if(turn == "" || player2 == "") {
-        alert("You must pick a color for each player!");
-    }
-    else {
-        colorModal.style.display = "none";
-        board.style.display = "block";
-    }
 }
 
 //COLOR PICKER
-
 let colorInput1 = document.querySelector('#color1');
 let colorInput2 = document.querySelector('#color2');
 
@@ -346,5 +329,19 @@ colorInput2.addEventListener('input', () =>{
     let color2 = colorInput2.value;
 
     player2 = color2;
+    colorModal.style.display = "none";
+    board.style.display = "block";
 });
 //end color picker
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("begin")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    colorModal.style.display = "none";
+    board.style.display = "block";
+    player1 = "red";
+    player2 = "yellow";
+    turn = "red";
+}

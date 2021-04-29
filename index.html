@@ -18,7 +18,7 @@
                 <center style="font-size:50px;
                                font-weight:bold;">Pick your opponent</center>
                 <div id="images">
-                    <button id="opponent" onclick="player()">
+                    <button id="opponent" onclick="colorFunction()">
                         <figure class="item">
                             <img src="images/player-icon.svg" class="menupics">
                             <figcaption class="caption">Player</figcaption>
@@ -31,7 +31,6 @@
                     </figure></a>
                     </button>
                 </div>
-                <button onclick="colorFunction()" id="myBtn1"><img id="arrow" src="images/arrow.png"></button>
             </div>
         </div>
         <div id="myModal1" class="modal1">
@@ -40,8 +39,7 @@
                 <!--color picker-->
                 <label for="color" style="font-size:50px;
                                           font-weight:bold; display:block; text-align:center;">Select your Color</label>
-                <br>
-                <div class="column colorSection">
+                <div class="column1 colorSection">
                     <p class="colorChoice">Player 1:
                         <input type="text" id="hex1">
                         <input type="color" id="color1"></p>
@@ -50,17 +48,16 @@
                         <input type="text" id="hex2">
                         <input type="color" id="color2"></p>
                 </div>
-                <div class="column or">
+                <div class="column1 or">
                     <p id="or">OR</p>
                 </div>
-                <div class="column defaultColorSection">
+                <div class="column1 defaultColorSection">
                     <div id="colors">
                         <img id="red" src="images/redcircle.png">
                         <img id="yellow" src="images/yellowcircle.png">
                     </div>
-                    <p>Play with default colors</p>
+                    <span class="begin">Play with Default Colors</span>
                 </div>
-                <span class="begin">Begin</span>
             </div>
         </div>
         <div class="container" id="board">
