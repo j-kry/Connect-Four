@@ -78,6 +78,54 @@ figure.item {
   font-size:30px;
 }
 
+.bg:hover {
+    background-color: #fab22f;
+}
+
+.bg {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0);
+    border: 3px solid;
+}
+
+#bgBtn {
+    margin-top: -20px;
+    margin-left: 20px;
+}
+
+#bgBackBtn {
+    margin-top: 300px;
+    margin-left: -480px;
+}
+
+#bgWindow {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    color:white;
+    font-size:30px;
+}
+
+.bgImg {
+    height: 100px;
+    width: 100px;
+    margin-left: 22px;
+    margin-right: 22px;
+    margin-top: 100px;
+}
+
+.bgImg:hover {
+    border: 3px solid #fab22f;
+}
+
 /* Modal Content */
 .modal-content {
   background-color: #0000FF;
@@ -261,6 +309,12 @@ figure.item {
             background-color: rgba(0,0,0,0.5); /* Black background with opacity */
             z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
             cursor: pointer; /* Add a pointer on hover */
+          }
+
+          .history {
+              color: white;
+              -webkit-text-stroke-width: 0.3px;
+              -webkit-text-stroke-color: black;
           }
 
         @media only screen and (max-width: 768px) {

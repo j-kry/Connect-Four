@@ -62,7 +62,8 @@ $(".column").click(function() {
     //Substring the id of the column just to get the number
     placeToken(clickedCol.substring(6));
 
-    changeTurn();
+    //Moved to placeToken otherwise you can click a filled column and switch turns
+    //changeTurn();
 
     //Changes the column color back to the board color and border
     this.style.border = "1px solid #000";
@@ -119,14 +120,16 @@ function placeToken(colNum) {
             winArray[colNum][length-1] = 2;
         }
 
+        //Remove the row that has a token in it now from the index array
+        indexes[colNum].pop();
+
         //Check for win
         winner = checkWin(colNum, length-1, winPlayer);
 
         if(winner != null)
             gameOver(winner);
 
-        //Remove the row that has a token in it now from the index array
-        indexes[colNum].pop();
+        changeTurn();
 
         //Displays the arrays in the console in your browser
         console.table(indexes);
@@ -143,7 +146,10 @@ function gameOver(winner) {
     //Make the page not interactable by displaying an overlay
     document.getElementById("overlay").style.display = "block";
     
-    alert("Player " + winner + " wins!");
+    if(winner == "draw")
+        alert("The game was a draw");
+    else
+        alert("Player " + winner + " wins!");
 
     if(window.confirm("Would you like to play again?")) {
         location.reload();
@@ -153,6 +159,16 @@ function gameOver(winner) {
 }
 
 function checkWin(col, row, player) {
+
+    var size = 0;
+
+    for(var i in indexes) {
+        if(indexes[i].length > 0)
+            size++;
+    }
+
+    if(size == 0)
+        return "draw";
 
     var count = 0;
 
@@ -289,6 +305,7 @@ function isComputerMatch() {
 //end game board script
 
 var gameTypeModal = document.getElementById("myModal");
+var bgWindow = document.getElementById("bgWindow");
 
 // Get the button that opens the modal1 and closes current modal
 var colorModal = document.getElementById("myModal1");
@@ -334,3 +351,25 @@ span.onclick = function() {
     player2 = "yellow";
     turn = "red";
 }
+
+function bgPick() {
+
+    colorModal.style.display = "none";
+    bgWindow.style.display = "block";
+
+}
+
+function bgBack() {
+
+    bgWindow.style.display = "none";
+    colorModal.style.display = "block";
+
+}
+
+$(".bgImg").click(function() {
+
+    var src = this.getAttribute("src");
+    document.body.style.background = "url(" + src + ")";
+    document.body.style.backgroundRepeat = "repeat";
+
+});
