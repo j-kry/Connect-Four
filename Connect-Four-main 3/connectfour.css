@@ -1,0 +1,305 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightblue;
+    margin: 0 auto;
+}
+
+h1 {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    text-align: center;
+}
+
+a{
+    color: white;
+}
+
+.menupics {
+    width:150px; 
+    padding-bottom: 8px;
+}
+
+.menupics:hover{
+    color: #fab22f;
+    filter: invert(27%)
+            sepia(80%)
+            saturate(2500%)
+            hue-rotate(37deg)
+            brightness(175%)
+            contrast(97%);
+}
+
+figure.item {
+    vertical-align: top;
+    display:inline-block;
+    text-align: center;
+}
+.caption {
+    display:block;
+}
+
+#images {
+    text-align:center;
+}
+
+.container {
+    background-size:cover;
+}
+
+/* button for opponent */
+#opponent {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border:none;
+    cursor: pointer;
+    overflow: hidden;
+    outline:none;
+    color:white;
+    font-size: 25px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  color:white;
+  font-size:30px;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #0000FF;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 55%;
+  height:350px;
+  font-size: 20;
+}
+
+.modal1 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  color:white;
+  font-size:30px;
+}
+
+/* Next button in modal content */
+#myBtn1 {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border:none;
+    cursor: pointer;
+    overflow: hidden;
+    outline:none;
+}
+#myBtn1:focus {
+    background-color: #0000FF;
+    border: none; 
+}
+#arrow {
+    height:50px;
+    width:50px;
+    margin-left:640px;
+}
+
+
+.colorChoice {
+    padding-left: 30px;
+}
+
+.column1 {
+    float:left;
+}
+
+.colorSection {
+    width:40%;
+}
+
+.or {
+    width:20%;
+}
+
+.defaultColorSection {
+    width:40%;
+    padding-top: 70px;
+    padding-left: 50px;
+    position:relative;
+    height:auto;
+}
+
+#defaultButton {
+    font-size:20px;
+    background-color: #FFFFFF;
+    color:black;
+    padding:7px;
+    border: none;
+    margin-top:5px;
+}
+
+#or {
+    text-align:center;
+    line-height:200px;
+}
+
+#red {
+    width:50px;
+    margin-left:auto;
+}
+
+#yellow {
+    width:50px;
+    margin-right:auto;
+}
+
+#colors {
+    padding-left: 55px;
+    margin-bottom: 5px;
+}
+
+/* The Close Button */
+.begin {
+    font-size:20px;
+    background-color: #add8e6;
+    color:black;
+    padding:7px;
+    border: none;
+    margin-top:10px;
+}
+
+.begin:hover,
+.begin:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* for index.html */
+ *{box-sizing: border-box}
+
+        .container {
+            width: 720px;
+            height: 720px;
+            overflow: hidden;
+            margin: 50px auto 0 auto;
+            background-color: #1d70ec;
+            position: relative;
+        }
+
+        .container .column {
+            float: left;
+            position: absolute;
+            width: 90px;
+            height: 720px;
+            border: 1px solid #000;  
+        }
+        
+        #column1 {
+            left: 90px;
+        }
+        #column2 {
+            left: 180px;
+        }
+        #column3 {
+            left: 270px;
+        }
+        #column4 {
+            left: 360px;
+        }
+        #column5 {
+            left: 450px;
+        }
+        #column6 {
+            left: 540px;
+        }
+        #column7 {
+            left: 630px;
+        }
+
+        .container .dot {
+            float: left;
+            width: 80px;
+            height: 80px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            transition: all .25s ease-in-out;
+            line-height: 100px;
+            margin: 5px;
+            background-color: #fff;
+        }
+
+        #overlay {
+            position: fixed; /* Sit on top of the page content */
+            display: none; /* Hidden by default */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+          }
+
+        @media only screen and (max-width: 768px) {
+            /* For mobile phones: */
+            .container {
+                width: 360px;
+                height: 360px;
+            }
+
+            .container .dot {
+                width: 40px;
+                height: 40px;
+                margin: 2.5px;
+            }
+
+            .container .column {
+                width: 45px;
+                height: 360px;
+            }
+
+            #column1 {
+                left: 45px;
+            }
+            #column2 {
+                left: 90px;
+            }
+            #column3 {
+                left: 135px;
+            }
+            #column4 {
+                left: 180px;
+            }
+            #column5 {
+                left: 225px;
+            }
+            #column6 {
+                left: 270px;
+            }
+            #column7 {
+                left: 315px;
+            }
+        }
