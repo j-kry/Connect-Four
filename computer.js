@@ -55,11 +55,13 @@ $(".column").click(function() {
     //Substring the id of the column just to get the number
     lastPosition = placeToken(column);
 
-    changeTurn();
+    //Moved to placeToken
+    //changeTurn();
 
     computer(column, lastPosition);
 
-    changeTurn();
+    //Moved to placeToken
+    //changeTurn();
 
     //Changes the column color back to the board color and border
     this.style.border = "1px solid #000";
@@ -117,14 +119,16 @@ function placeToken(colNum) {
                 winArray[colNum][length-1] = 2;
             }
 
+            //Remove the row that has a token in it now from the index array
+            indexes[colNum].pop();
+
             //Check for win
             winner = checkWin(colNum, length-1, winPlayer);
             
             if(winner != null)
                 gameOver(winner);
 
-            //Remove the row that has a token in it now from the index array
-            indexes[colNum].pop();
+            changeTurn();
 
             //Displays the arrays in the console in your browser
             console.table(indexes);
@@ -140,24 +144,33 @@ function placeToken(colNum) {
 
 function gameOver(winner) {
 
-    if(winner == 2)
-        winner = "Computer";
-    else
-        winner = "Player 1"
+    //Make the page not interactable by displaying an overlay
+    document.getElementById("overlay").style.display = "block";
 
-    alert(winner + " wins!");
+    if(winner == 2)
+        alert("The computer won!");
+    else if(winner == 1)
+        alert("You beat the computer!");
+    else
+        alert("The game was a draw");
     
     if(window.confirm("Would you like to play again?")) {
         location.reload();
     }
-    else {
-
-    }
-
 
 }
 
 function checkWin(col, row, player) {
+
+    var size = 0;
+
+    for(var i in indexes) {
+        if(indexes[i].length > 0)
+            size++;
+    }
+
+    if(size == 0)
+        return "draw";
 
     var count = 0;
 

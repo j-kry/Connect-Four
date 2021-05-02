@@ -62,7 +62,8 @@ $(".column").click(function() {
     //Substring the id of the column just to get the number
     placeToken(clickedCol.substring(6));
 
-    changeTurn();
+    //Moved to placeToken otherwise you can click a filled column and switch turns
+    //changeTurn();
 
     //Changes the column color back to the board color and border
     this.style.border = "1px solid #000";
@@ -81,79 +82,93 @@ function changeTurn() {
 
 function placeToken(colNum) {
 
-        var winPlayer = 0;
-        var winner;
+    var winPlayer = 0;
+    var winner;
 
-        //place token of the player color
-        var length = indexes[colNum].length;
+    //place token of the player color
+    var length = indexes[colNum].length;
 
-        if(length>0) {
+    if(length>0) {
 
-            //Get the location of where to place a token
-            //The row of the column that gets placed is popped from the array at the end of this function
-            var place = indexes[colNum][length-1];
+        //Get the location of where to place a token
+        //The row of the column that gets placed is popped from the array at the end of this function
+        var place = indexes[colNum][length-1];
 
-            //Place a token by changing the background color
-            document.getElementById(place).style.backgroundColor = turn;
+        //Place a token by changing the background color
+        document.getElementById(place).style.backgroundColor = turn;
 
-            if(turn == player1) {
+        if(turn == player1) {
 
-                winPlayer = 1;
+            winPlayer = 1;
 
-                //Move history for player1
-                var history = document.getElementById("history");
-                history.innerHTML += colNum + ",";
+            //Move history for player1
+            var history = document.getElementById("history");
+            history.innerHTML += colNum + ",";
 
-                //Need to mark location in the win array as having a player1 token
-                winArray[colNum][length-1] = 1;
-            }
-            else{
-
-                winPlayer = 2;
-
-                //Move history for player 2
-                var history2 = document.getElementById("history2");
-                history2.innerHTML += colNum + ",";
-
-                //Need to mark location in the win array as having a player2 token
-                winArray[colNum][length-1] = 2;
-            }
-
-            //Check for win
-            winner = checkWin(colNum, length-1, winPlayer);
-            
-            if(winner != null)
-                gameOver(winner);
-
-            //Remove the row that has a token in it now from the index array
-            indexes[colNum].pop();
-
-            //Displays the arrays in the console in your browser
-            console.table(indexes);
-            console.log("///////////////////////////////////////////////////\n///////////////////////////////////////////////////")
-            console.table(winArray);
-
+            //Need to mark location in the win array as having a player1 token
+            winArray[colNum][length-1] = 1;
         }
-    
+        else{
+
+            winPlayer = 2;
+
+            //Move history for player 2
+            var history2 = document.getElementById("history2");
+            history2.innerHTML += colNum + ",";
+
+            //Need to mark location in the win array as having a player2 token
+            winArray[colNum][length-1] = 2;
+        }
+
+        //Remove the row that has a token in it now from the index array
+        indexes[colNum].pop();
+
+        //Check for win
+        winner = checkWin(colNum, length-1, winPlayer);
+
+        if(winner != null)
+            gameOver(winner);
+
+        changeTurn();
+
+        //Displays the arrays in the console in your browser
+        console.table(indexes);
+        console.log("///////////////////////////////////////////////////\n///////////////////////////////////////////////////")
+        console.table(winArray);
+
+    }
+
 
 }
 
 function gameOver(winner) {
 
-    board.style.display = "none";
-    alert("Player " + winner + " wins!");
+    //Make the page not interactable by displaying an overlay
+    document.getElementById("overlay").style.display = "block";
     
+    if(winner == "draw")
+        alert("The game was a draw");
+    else
+        alert("Player " + winner + " wins!");
+
     if(window.confirm("Would you like to play again?")) {
         location.reload();
-    }
-    else {
-
     }
 
 
 }
 
 function checkWin(col, row, player) {
+
+    var size = 0;
+
+    for(var i in indexes) {
+        if(indexes[i].length > 0)
+            size++;
+    }
+
+    if(size == 0)
+        return "draw";
 
     var count = 0;
 
@@ -260,7 +275,7 @@ function checkWin(col, row, player) {
         }
 
     }
-    
+
 }
 
 function computer(lastCol, lastRow) {
@@ -289,19 +304,8 @@ function isComputerMatch() {
 
 //end game board script
 
-//For the modal box on game.html
-// Get the modal
 var gameTypeModal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    gameTypeModal.style.display = "block";
-}
-//end modal box script
+var bgWindow = document.getElementById("bgWindow");
 
 // Get the button that opens the modal1 and closes current modal
 var colorModal = document.getElementById("myModal1");
@@ -312,26 +316,9 @@ var btn1 = document.getElementById("myBtn1");
 function colorFunction() {
     gameTypeModal.style.display = "none";
     colorModal.style.display = "block";
-    
-}
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("begin")[0];
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-
-    if(turn == "" || player2 == "") {
-        alert("You must pick a color for each player!");
-    }
-    else {
-        colorModal.style.display = "none";
-        board.style.display = "block";
-    }
 }
 
 //COLOR PICKER
-
 let colorInput1 = document.querySelector('#color1');
 let colorInput2 = document.querySelector('#color2');
 
@@ -346,5 +333,43 @@ colorInput2.addEventListener('input', () =>{
     let color2 = colorInput2.value;
 
     player2 = color2;
+    colorModal.style.display = "none";
+    board.style.display = "block";
 });
 //end color picker
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("begin")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    colorModal.style.display = "none";
+    board.style.display = "block";
+    document.getElementById("history").hidden = false;
+    document.getElementById("history2").hidden = false;
+    player1 = "red";
+    player2 = "yellow";
+    turn = "red";
+}
+
+function bgPick() {
+
+    colorModal.style.display = "none";
+    bgWindow.style.display = "block";
+
+}
+
+function bgBack() {
+
+    bgWindow.style.display = "none";
+    colorModal.style.display = "block";
+
+}
+
+$(".bgImg").click(function() {
+
+    var src = this.getAttribute("src");
+    document.body.style.background = "url(" + src + ")";
+    document.body.style.backgroundRepeat = "repeat";
+
+});
