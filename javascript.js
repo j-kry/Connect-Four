@@ -306,6 +306,7 @@ function isComputerMatch() {
 
 var gameTypeModal = document.getElementById("myModal");
 var bgWindow = document.getElementById("bgWindow");
+var welcomeWindow = document.getElementById("welcome");
 
 // Get the button that opens the modal1 and closes current modal
 var colorModal = document.getElementById("myModal1");
@@ -350,6 +351,12 @@ span.onclick = function() {
     player1 = "red";
     player2 = "yellow";
     turn = "red";
+}
+
+function startGame() {
+
+    welcomeWindow.style.display = "none";
+
 }
 
 function bgPick() {

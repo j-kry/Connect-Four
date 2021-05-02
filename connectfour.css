@@ -8,8 +8,8 @@ h1 {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
+    /* -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black; */
     text-align: center;
 }
 
@@ -86,6 +86,34 @@ figure.item {
 
 .container {
     background-size:cover;
+}
+
+#welcome {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    color:white;
+    font-size:30px;
+}
+
+#logo {
+    height: 100px;
+    width: 100px;
+}
+
+#startBtn {
+
+    margin-top: 300px;
+    margin-left: 300px;
+
 }
 
 /* button for opponent */
