@@ -13,6 +13,45 @@ h1 {
     text-align: center;
 }
 
+.header{
+  width: 100%;
+  height: 120px;
+  display: block;
+  background-color: #101010;
+}
+
+.innerhead{
+  width: 90%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  background-color: #101010;
+}
+
+.headlogo{
+  height: 100%;
+  margin:auto;
+  display: table;
+  float: center;
+}
+
+.headlogo h1{
+  color: white;
+  margin: auto;
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  font-family: 'Courier New' , monospace;
+  font-size: 50px;
+  font-weight: 200;
+
+}
+
+.headlogo h1 span{
+  font-weight: 800;
+
+}
+
 a{
     color: white;
 }
