@@ -106,9 +106,15 @@ figure.item {
 
 #logo {
     display: inline-block;
-    height: 200px;
-    width: 400px;
+    width: 50%;
     margin:auto;
+}
+#logo1 {
+    display: inline-block;
+    height: 10%;
+    position:fixed;
+    top:0;  
+    
 }
 
 #startBtn {
