@@ -1,3 +1,93 @@
+/* Animate Background*/
+@keyframes Gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}
+  
+@keyframes cube {
+    from {
+      transform: scale(0) rotate(0deg) translate(-50%, -50%);
+      opacity: 1;
+    }
+    to {
+      transform: scale(20) rotate(960deg) translate(-50%, -50%);
+      opacity: 0;
+    }
+}
+.content {
+    left: 50%;
+    padding: 50px;
+    position: absolute;
+    text-align: center;
+    top: 60%;
+    transform:translate(-50%, -50%);
+}
+
+.background {
+    background: linear-gradient(132deg, #cf0a56, #2515b8, #790a4a);
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding:0;
+    margin:0px;
+}
+
+.cube {
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #D7D4E4;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 12s ease-in forwards infinite;
+}
+
+.cube:nth-child(2n) {
+    border-color: #FFF ;
+}
+
+.cube:nth-child(2) {
+    animation-delay: 2s;
+    left: 25vw;
+    top: 40vh;
+}
+
+.cube:nth-child(3) {
+    animation-delay: 4s;
+    left: 75vw;
+    top: 50vh;
+}
+
+.cube:nth-child(4) {
+    animation-delay: 6s;
+    left: 90vw;
+    top: 10vh;
+}
+
+  .cube:nth-child(5) {
+    animation-delay: 8s;
+    left: 10vw;
+    top: 85vh;
+}
+
+.cube:nth-child(6) {
+    animation-delay: 10s;
+    left: 50vw;
+    top: 10vh;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: lightblue;
@@ -62,13 +152,8 @@ a{
 }
 
 .menupics:hover{
-    color: #fab22f;
-    filter: invert(27%)
-            sepia(80%)
-            saturate(2500%)
-            hue-rotate(37deg)
-            brightness(175%)
-            contrast(97%);
+    color: #790a4a;
+    filter: invert(16%) sepia(24%) saturate(5368%) hue-rotate(298deg) brightness(99%) contrast(114%);
 }
 
 figure.item {
@@ -130,7 +215,7 @@ figure.item {
 }
 
 #startBtn:hover {
-    background-color: #fab22f;
+    background-color: #790a4a;
 }
 
 /* button for opponent */
@@ -163,7 +248,7 @@ figure.item {
 }
 
 .bg:hover {
-    background-color: #fab22f;
+    background-color: #790a4a;
 }
 
 .bg {
@@ -207,12 +292,12 @@ figure.item {
 }
 
 .bgImg:hover {
-    border: 3px solid #fab22f;
+    border: 3px solid #790a4a;
 }
 
 /* Modal Content */
 .modal-content {
-  background-color: #0000FF;
+  background: linear-gradient(132deg, #cf0a56, #2515b8, #790a4a);
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
@@ -322,7 +407,7 @@ figure.item {
 }
 
 .begin:hover {
-  background-color: #fab22f;
+  background-color: #790a4a;
 }
 
 /* for index.html */
@@ -396,6 +481,7 @@ figure.item {
           .history {
               color: white;
               font-size: 20px;
+              position: sticky;
               -webkit-text-stroke-width: 0.3px;
               -webkit-text-stroke-color: black;
           }
