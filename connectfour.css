@@ -31,8 +31,8 @@ h1 {
 .headlogo{
   height: 100%;
   margin:auto;
-  display: table;
-  float: center;
+  display: block;
+  /* float: center; */
 }
 
 .headlogo h1{
@@ -105,22 +105,23 @@ figure.item {
 }
 
 #logo {
-    display: inline-block;
+    display: block;
     width: 50%;
     margin:auto;
 }
 #logo1 {
-    display: inline-block;
-    height: 10%;
-    position:fixed;
-    top:0;  
+    display: block;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;    
     
 }
 
 #startBtn {
 
-    display: inline-block;
-    margin-top: 300px;
+    display: block;
+    width: 100px;
+    margin-top: 30px;
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(0, 0, 0, 0);
@@ -258,6 +259,7 @@ figure.item {
 
 .colorChoice {
     padding-left: 30px;
+    padding-top: 30px;
 }
 
 .column1 {
