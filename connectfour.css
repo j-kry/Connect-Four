@@ -90,7 +90,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: lightblue;
+    background-color: #000;
     margin: 0 auto;
 }
 
@@ -152,8 +152,8 @@ a{
 }
 
 .menupics:hover{
-    color: #790a4a;
-    filter: invert(16%) sepia(24%) saturate(5368%) hue-rotate(298deg) brightness(99%) contrast(114%);
+    color: #f9da54;
+    filter: invert(100%) sepia(24%) saturate(7479%) hue-rotate(318deg) brightness(109%) contrast(95%);
 }
 
 figure.item {
